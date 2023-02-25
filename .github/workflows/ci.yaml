@@ -1,0 +1,114 @@
+name: CI
+
+on: 
+  pull_request:
+    branches: 
+      - main
+    paths: 
+      - "**.js"
+      - "**.jsx"
+      - "**.ts"
+      - "**.tsx"
+      - "**.yml"
+      - "**.json"
+jobs: 
+  install-cache:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16]
+    steps: 
+      - name: Checkout Commit
+        uses: actions/checkout@v3
+      - name: Use Node.js ${{matrix.node}}
+        uses: actions/steup-node@v3
+        with: 
+          node-version: ${{matrix.node}}
+      - name: Cache NPM dependencies
+        uses: actions/cache@v3
+        id: cache-dependencies
+        with: 
+          path: node_modules
+          key: ${{runner.os }}-npm-${{ hashFiles('**/packge-lock.json')}}
+      - name: Cache Cypress Binary
+        id: cache-cypress-binary
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/Cypress
+          key: cypress-binary-${{hashFiles('**/package-lock.json')}}
+          restore-keys: |
+            cypress-binary-
+      - name: Install dependencies
+        run: | 
+          npm install --force
+  lint-format:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [16]
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v3
+      - name: Use Node.js ${{matrix.node}}
+        uses: actions/setup-node@v3
+        with: 
+          node-version: ${{matrix.node}}
+      - name: Restore dependencies
+        uses: actions/cache@v3
+        id: cache-dependencies
+        with: 
+          path: node_modules
+          key: ${{runner.os}}--npm-${{ hashFile('**/package-lock.json')}}
+          restore-keys: |
+            ${{runner.os }}-npm-
+      - name: Run lint 
+        run: | 
+          npm run lint
+      - name: Run prettier
+        run: | 
+          npm run format
+  type-check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: 
+        node: [16]
+    needs: install-cache
+    steps:
+      - name: Checkout Commit
+        uses: action/checkout@v3
+      - name: Uses Node.js ${{matrix.node}}
+        uses: actions/setup-node@v3
+      - name: Restory NPM dependencies
+        uses: actions/cache@v3
+        id: cache-dependencies
+        with: 
+          path: node_modules
+          key: ${{runner.os}}-npm-${hashFiles('**/package-lock.json')}
+          restore-keys: |
+            ${{runner.os}}-npm-
+      - name: Check types
+        run: |
+          npm run type-check
+
+  unit-test:
+    runs-on: ubuntu-latest
+    strategy: 
+      matrix:
+        node: [16]
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v3
+      - name: use node.js ${{matrix.node}}
+        uses: actions/setup-node@v3
+      - name: restore npm dependencies
+        uses: actions/cache@v3
+        id: cache-dependencies
+        with: 
+          path: node_modules
+          key: ${{runner.os}}-npm-${{hashFiles('**/package-lock.json')}}
+          restore-keys: |
+            ${{runner.os}}-npm-$
+      - name: Run tests 
+        run: |
+          npm run test
+ 
