@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <>
       <HeaderWrapper>
-        <Grid column="1fr minmax(auto,70ch) 1fr" gap="16px">
+        <Grid column="1fr minmax(auto,60ch) 1fr" gap="16px">
           <HeaderContent>
             <Flex>
               <Anchor size="16px" href="/">
@@ -48,7 +48,7 @@ const Header = () => {
             </TitleFlex>
           </HeaderContent>
         </Grid>
-        <HeaderPadding/>
+        <HeaderPadding />
       </HeaderWrapper>
     </>
   );
