@@ -16,13 +16,17 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@medic-code/design-system-website": "^1.0.14",
     "@types/node": "18.14.1",
+    "@types/styled-components": "^5.1.26",
+    "babel-plugin-styled-components": "^2.0.7",
     "eslint": "8.34.0",
     "eslint-config-next": "13.2.1",
-    "next": "13.2.1",
+    "next": "^13.2.4-canary.5",
+    "polished": "^4.2.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "styled-components": "^4.4.1",
+    "styled-components-modifiers": "^1.2.5"
   },
   "lint-staged": {
     "*.ts": [
