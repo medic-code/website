@@ -22,12 +22,9 @@ export const HamburgerIcon = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect x="0.407196" y="0.5" width="40" height="4" />
-      <rect x="0.407196" y="0.5" width="40" height="4" />
-      <rect x="0.407196" y="12.5" width="40" height="4" />
-      <rect x="0.407196" y="12.5" width="40" height="4" />
-      <rect x="0.407196" y="24.5" width="40" height="4" />
-      <rect x="0.407196" y="24.5" width="40" height="4" />
+      <rect x="0.407196" y="0.5" width="40" height="2" />
+      <rect x="0.407196" y="12.5" width="40" height="2" />
+      <rect x="0.407196" y="24.5" width="40" height="2" />
     </StyledSVG>
   );
 };
