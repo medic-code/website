@@ -9,6 +9,10 @@ const Grid = styled.div<GridProps>`
   justify-items: ${(props) => props.justifyItems};
   grid-template-columns: ${(props) => props.column};
   grid-template-rows: ${(props) => props.rows};
+
+  > * {
+    grid-column: 2;
+  }
 `;
 
 export default Grid;
