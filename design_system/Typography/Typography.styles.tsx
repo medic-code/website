@@ -12,6 +12,7 @@ import { IProps } from './Typography.types';
 
 const HEADING = `
                  line-height: 1.6818;
+                 margin: 0 0 1rem 0;
              `;
 
 const TEXT_MODIFIERS = {
@@ -33,7 +34,7 @@ const TEXT_MODIFIERS = {
 
 const StyledText = styled.p<IProps>`
   padding: 0;
-  margin: 0;
+  margin: ${(props) => props.margin || '0px'};
   line-height: 1.5;
   font-size: ${(props) => (props.size ? props.size : fontSizes['paragraph'])};
   font-family: ${primaryFont};
