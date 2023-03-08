@@ -8,6 +8,7 @@ const Flex = styled.div<FlexProps>`
   flex-direction: ${(props) => props.flexDirection || 'row'};
   justify-content: ${(props) => props.justifyContent || 'flex-start'};
   align-content: ${(props) => props.alignContent};
+  gap: ${(props) => props.gap || '0px'};
 `;
 
 export default Flex;

@@ -21,10 +21,10 @@ type justifyContent =
   | 'space-evenly';
 
 export interface FlexProps {
-  alignItems: alignItems;
-  alignContent: alignContent;
-  flexDirection: flexDirection;
-  gap: number;
-  justifyContent: justifyContent;
-  wrap: flexWrap;
+  alignItems?: alignItems;
+  alignContent?: alignContent;
+  flexDirection?: flexDirection;
+  gap?: string;
+  justifyContent?: justifyContent;
+  wrap?: flexWrap;
 }
