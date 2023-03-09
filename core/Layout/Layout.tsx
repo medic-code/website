@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../components/Footer/index';
-import Footer from '../components/Header/index';
+import Header from '../components/Header/index';
+import Footer from '../components/Footer/index';
 import { layoutProps } from './types';
 
 const Layout = (props: layoutProps) => {
@@ -10,7 +10,7 @@ const Layout = (props: layoutProps) => {
     <main>
       {header ? <Header /> : null}
       {children}
-      {Footer ? <Footer /> : null}
+      {footer ? <Footer /> : null}
     </main>
   );
 };
