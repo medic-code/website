@@ -24,8 +24,8 @@ const About = () => {
             size={fontSizes['--paragraph']}
             color="hsl(var(--palette-gray-75))"
           >
-            I've been a clinician for over 8 years having worked in over 12
-            different specialities across my career. I've also been a Course
+            I{"'"}ve been a clinician for over 8 years having worked in over 12
+            different specialities across my career. I{"'"}ve also been a Course
             Lead in the Online MSc Internal Medicine for 3 years teaching Acute
             Medicine and Clinical Skills Principles.
           </Typography>
@@ -42,7 +42,7 @@ const About = () => {
             size={fontSizes['--paragraph']}
             color="hsl(var(--palette-gray-75))"
           >
-            I've most recently been a Clinical Lead and Product Owner at a
+            I{"'"}ve most recently been a Clinical Lead and Product Owner at a
             Healthcare Tech company in the cancer space. Helping to steer NHS
             Stakeholders through using digital products with a key role in
             clinical governance.
