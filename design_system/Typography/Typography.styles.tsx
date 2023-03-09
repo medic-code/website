@@ -45,8 +45,6 @@ const StyledText = styled.p<IProps>`
   margin: ${(props) => props.margin || '0px'};
   line-height: 1.9;
   margin-bottom: 1rem;
-  hyphens: auto;
-  word-break: break-all;
   font-size: ${(props) => (props.size ? props.size : fontSizes['--paragraph'])};
   font-family: ${primaryFont};
   font-weight: ${(props) =>
