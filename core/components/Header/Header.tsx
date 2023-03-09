@@ -5,7 +5,6 @@ import {
   Grid,
   Anchor,
   Typography,
-  green,
 } from '../../../design_system/index';
 import { fontSizes } from '../../../design_system/lib';
 import styled from 'styled-components';
@@ -22,7 +21,7 @@ const Header = () => {
   return (
     <>
       <HeaderWrapper>
-        <Grid column="1fr minmax(auto,60ch) 1fr" gap="16px">
+        <Grid column="1fr minmax(auto,70ch) 1fr" gap="16px">
           <HeaderContent>
             <Flex>
               <Anchor size="16px" href="/">
@@ -37,12 +36,13 @@ const Header = () => {
             <TitleFlex>
               <Typography
                 modifiers="heading1"
-                size={fontSizes['header1']}
-                color={green[800]}
+                size={fontSizes['--header1']}
+                color="var(--palette-green-00)"
+                margin="0px 0px 0px 0px"
               >
                 Aaron Smith
               </Typography>
-              <Typography modifiers="heading4" size={fontSizes['header3']}>
+              <Typography modifiers="heading4" size={fontSizes['--header3']}>
                 Doctor / Software Developer
               </Typography>
             </TitleFlex>
