@@ -1,6 +1,9 @@
 import Header from '../core/components/Header';
 import Footer from '../core/components/Footer';
 import About from '../core/components/About';
+import Image from 'next/image';
+import iolassist from '../public/Images/1.svg';
+import iolassist1 from '../public/Images/2.svg';
 
 import {
   Grid,
@@ -86,7 +89,6 @@ const indexPage = () => {
           >
             Projects
           </Typography>
-          <ImagePlaceHolder />
           <Typography
             modifiers="modifiedHeading3"
             size={fontSizes['--header3']}
@@ -97,6 +99,28 @@ const indexPage = () => {
             A mobile app to support cataract surgeons with intra-ocular lens
             choices
           </Typography>
+          <Flex gap="16px">
+            <Image
+              src={iolassist}
+              alt="IOL Assist Lens"
+              width={208}
+              height={450}
+              style={{
+                border: '1px solid hsl(var(--palette-gray-10))',
+                borderRadius: '30px',
+              }}
+            />
+            <Image
+              src={iolassist1}
+              alt="IOL Assist Viscoelastic"
+              width={208}
+              height={450}
+              style={{
+                border: '1px solid hsl(var(--palette-gray-10))',
+                borderRadius: '30px',
+              }}
+            />
+          </Flex>
         </section>
         <section>
           <Typography modifiers="heading2" size={fontSizes['--header2']}>
