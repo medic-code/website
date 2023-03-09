@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'polished';
-import { primaryFont } from './typography';
+
+import { radii } from './radii';
+import { spaces } from './spaces';
+import { fontWeights, fontSizes, primaryFont } from './typography';
+import { palette } from './colors';
 
 const GlobalStyles = createGlobalStyle`
     ${normalize()}
@@ -15,6 +19,15 @@ const GlobalStyles = createGlobalStyle`
 
     body {
         margin: 0;
+    }
+
+    :root {
+        ${radii};
+        ${spaces};
+        ${fontWeights};
+        ${fontSizes};
+        ${primaryFont};
+        ${palette}
     }
 `;
 

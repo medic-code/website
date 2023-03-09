@@ -3,6 +3,7 @@ interface UnderlineAnchorProps
   children: React.ReactNode;
   modifiers?: string[] | 'underline';
   size?: string;
+  margin?: string;
 }
 
 export default UnderlineAnchorProps;
