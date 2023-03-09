@@ -2,6 +2,7 @@ import {
   StackOverflowIcon,
   TwitterIcon,
   LinkedInIcon,
+  GitHubIcon,
   Grid,
   Anchor,
   Typography,
@@ -54,6 +55,7 @@ const Footer = () => {
                 href="https://stackoverflow.com/users/12566046/aarons?tab=profile"
                 target="_blank"
                 rel="noopener noreferrer"
+                margin="0 0 0 auto"
               >
                 <StackOverflowIcon />
               </Anchor>
@@ -63,6 +65,13 @@ const Footer = () => {
                 rel="noopener noreferrer"
               >
                 <TwitterIcon />
+              </Anchor>
+              <Anchor
+                href="http://www.github.com/medic-code"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GitHubIcon />
               </Anchor>
               <Anchor
                 href="http://www.linkedin.com/in/dr-aaron-smith"
