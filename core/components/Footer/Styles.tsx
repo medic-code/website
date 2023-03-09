@@ -6,9 +6,9 @@ export const FooterContent = styled.div``;
 
 export const FooterLine = styled.hr`
   width: 100%;
-  height: px;
+  height: 1px;
   color: hsl(var(--palette-gray-100));
-  margin: 16px 0;
+  margin: 1rem 0;
 `;
 
 export const FooterPadding = styled.div`

@@ -16,8 +16,6 @@ import {
   FooterPadding,
 } from './Styles';
 
-import Link from 'next/link';
-
 const Footer = () => {
   return (
     <footer>
@@ -32,8 +30,7 @@ const Footer = () => {
             >
               Aaron Smith
             </Typography>
-            <FooterPadding />
-            <Flex flexDirection="column" alignItems="flex-start" gap="16px">
+            <Flex flexDirection="column" alignItems="flex-start">
               <Anchor href="/">
                 <Typography modifiers="heading3" size={fontSizes['--header3']}>
                   Home
@@ -51,8 +48,7 @@ const Footer = () => {
               </Anchor>
             </Flex>
           </FooterContent>
-          <FooterPadding />
-          <Flex flexDirection="column" gap="48px">
+          <Flex flexDirection="column" gap="16px">
             <Flex justifyContent="center" gap="48px">
               <Anchor
                 href="https://stackoverflow.com/users/12566046/aarons?tab=profile"
