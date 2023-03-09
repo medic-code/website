@@ -35,7 +35,7 @@ const Header = () => {
             </Flex>
             <TitleFlex>
               <Typography
-                modifiers="heading1"
+                modifiers="modifiedHeading1"
                 size={fontSizes['--header1']}
                 color="var(--palette-green-00)"
                 margin="0px 0px 0px 0px"

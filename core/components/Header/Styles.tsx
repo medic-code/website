@@ -16,8 +16,7 @@ export const TitleFlex = styled.div`
   display: flex;
   flex-direction: column;
 `;
-export const HeaderWrapper = styled.header`
-`;
+export const HeaderWrapper = styled.header``;
 
 export const HeaderPadding = styled.div`
   height: 64px;

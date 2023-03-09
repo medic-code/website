@@ -5,7 +5,7 @@ import { IProps } from './Typography.types';
 
 const HEADING = `
                  line-height: 1.6818;
-                 margin: 0 0 0 0;
+                 margin: 0 0 1rem 0;
                  color: hsl(var(--palette-green-75));
              `;
 
@@ -24,12 +24,29 @@ const TEXT_MODIFIERS = {
   heading4: () => `
     font-weight: ${fontWeights['--normal']};
     ${HEADING}`,
+
+  modifiedHeading1: () => `
+    font-weight: ${fontWeights['--bold']};
+    line-height: 1.6818;
+    margin: 1rem 0 0rem 0;
+    color: hsl(var(--palette-green-75));
+  `,
+
+  modifiedHeading3: () => `
+    font-weight: ${fontWeights['--400']};
+    line-height: 1.6818;
+    margin: 1rem 0 0rem 0;
+    color: hsl(var(--palette-green-75));
+  `,
 };
 
 const StyledText = styled.p<IProps>`
   padding: 0;
   margin: ${(props) => props.margin || '0px'};
   line-height: 1.9;
+  margin-bottom: 1rem;
+  hyphens: auto;
+  overflow-wrap: break-word;
   font-size: ${(props) => (props.size ? props.size : fontSizes['--paragraph'])};
   font-family: ${primaryFont};
   font-weight: ${(props) =>
