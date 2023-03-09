@@ -29,7 +29,52 @@ export const HamburgerIcon = () => {
   );
 };
 
+export const DownloadIcon = () => {
+  return (
+    <StyledSVG
+      width="22"
+      height="22"
+      viewBox="0 0 24 25"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      stroke="currentColor"
+    >
+      <path
+        d="M21 15.5736V19.5736C21 20.104 20.7893 20.6127 20.4142 20.9878C20.0391 21.3629 19.5304 21.5736 19 21.5736H5C4.46957 21.5736 3.96086 21.3629 3.58579 20.9878C3.21071 20.6127 3 20.104 3 19.5736V15.5736"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      ></path>
+      <path
+        d="M7 10.5736L12 15.5736L17 10.5736"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      ></path>
+      <path
+        d="M12 15.5736V3.57361"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      ></path>
+    </StyledSVG>
+  );
+};
+
 export const TwitterIcon = () => {
+  return (
+    <StyledSVG
+      width="31"
+      height="41"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 248 204"
+    >
+      <path d="M221.95 51.29c.15 2.17.15 4.34.15 6.53 0 66.73-50.8 143.69-143.69 143.69v-.04c-27.44.04-54.31-7.82-77.41-22.64 3.99.48 8 .72 12.02.73 22.74.02 44.83-7.61 62.72-21.66-21.61-.41-40.56-14.5-47.18-35.07 7.57 1.46 15.37 1.16 22.8-.87-23.56-4.76-40.51-25.46-40.51-49.5v-.64c7.02 3.91 14.88 6.08 22.92 6.32C11.58 63.31 4.74 33.79 18.14 10.71c25.64 31.55 63.47 50.73 104.08 52.76-4.07-17.54 1.49-35.92 14.61-48.25 20.34-19.12 52.33-18.14 71.45 2.19 11.31-2.23 22.15-6.38 32.07-12.26-3.77 11.69-11.66 21.62-22.2 27.93 10.01-1.18 19.79-3.86 29-7.95-6.78 10.16-15.32 19.01-25.2 26.16z" />
+    </StyledSVG>
+  );
+};
+
+export const GitHubIcon = () => {
   return (
     <StyledSVG
       width="32"
