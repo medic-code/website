@@ -13,7 +13,8 @@ const StyledButton = styled.button<StyleProp>`
   background-color: hsl(var(--palette-green-15));
   padding: 11px 16px;
   color: #139398;
-  transition: background-color 0.2s linear, color 0.2s linear, border 0.6s linear;
+  transition: background-color 0.2s linear, color 0.2s linear,
+    border 0.6s linear;
   border: 0;
   &:active {
     box-shadow: 0 4px 20px #e5f3f3;

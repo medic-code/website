@@ -26,6 +26,13 @@ const ImagePlaceHolder = styled.div`
   margin-top: 20px;
 `;
 
+const handleClick = (yAxis: number) => {
+  window.scrollTo({
+    top: yAxis,
+    behavior: 'smooth',
+  });
+};
+
 const indexPage = () => {
   return (
     <>
@@ -37,8 +44,8 @@ const indexPage = () => {
             and impact
           </Typography>
           <Flex gap="16px" justifyContent="flex-start">
-            <Button>About Me</Button>
-            <Button>Projects</Button>
+            <Button onClick={() => handleClick(500)}>About Me</Button>
+            <Button onClick={() => handleClick(1090)}>Projects</Button>
             <Anchor
               href="https://stackoverflow.com/users/12566046/aarons?tab=profile"
               target="_blank"
