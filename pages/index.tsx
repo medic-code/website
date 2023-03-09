@@ -43,8 +43,8 @@ const indexPage = () => {
       <Grid column="1fr minmax(auto, 70ch) 1fr" gap="48px 16px">
         <section>
           <Typography modifiers="heading1" size={fontSizes['--header1']}>
-            Hello! I’m Aaron, a Edinburgh based Doctor passionate about products
-            and impact
+            Hello I’m Aaron, Edinburgh based Doctor passionate about products
+            and impact.
           </Typography>
           <Flex gap="16px" justifyContent="flex-start">
             <Button onClick={() => handleClick(500)}>About Me</Button>
