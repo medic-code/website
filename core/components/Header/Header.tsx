@@ -27,11 +27,6 @@ const Header = () => {
               <Anchor size="16px" href="/">
                 <LogoIcon />
               </Anchor>
-              <IconHidden>
-                <Anchor size="16px" href="/">
-                  <HamburgerIcon />
-                </Anchor>
-              </IconHidden>
             </Flex>
             <TitleFlex>
               <Typography
