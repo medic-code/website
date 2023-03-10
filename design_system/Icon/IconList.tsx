@@ -84,8 +84,6 @@ export const BackArrow = () => {
       fill="none"
       stroke="hsl(var(--palette-green-75))"
       stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
       role="img"
     >
       <title>Arrow</title>
