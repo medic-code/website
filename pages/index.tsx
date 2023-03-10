@@ -93,38 +93,41 @@ const indexPage = () => {
           >
             Projects
           </Typography>
-          <Typography
-            modifiers="modifiedHeading3"
-            size={fontSizes['--header3']}
-          >
-            IOL Assist
-          </Typography>
-          <Typography size={fontSizes['--paragraph']}>
-            A mobile app to support cataract surgeons with intra-ocular lens
-            choices
-          </Typography>
-          <Flex gap="16px">
-            <Image
-              src={iolassist}
-              alt="IOL Assist Lens"
-              width={208}
-              height={450}
-              style={{
-                border: '1px solid hsl(var(--palette-gray-10))',
-                borderRadius: '30px',
-              }}
-            />
-            <Image
-              src={iolassist1}
-              alt="IOL Assist Viscoelastic"
-              width={208}
-              height={450}
-              style={{
-                border: '1px solid hsl(var(--palette-gray-10))',
-                borderRadius: '30px',
-              }}
-            />
-          </Flex>
+          <Anchor href="/iolassist">
+            <Typography
+              modifiers="modifiedHeading3"
+              size={fontSizes['--header3']}
+              className="navtest"
+            >
+              IOL Assist
+            </Typography>
+            <Typography size={fontSizes['--paragraph']}>
+              A mobile app to support cataract surgeons with intra-ocular lens
+              choices
+            </Typography>
+            <Flex gap="16px">
+              <Image
+                src={iolassist}
+                alt="IOL Assist Lens"
+                width={208}
+                height={450}
+                style={{
+                  border: '1px solid hsl(var(--palette-gray-10))',
+                  borderRadius: '30px',
+                }}
+              />
+              <Image
+                src={iolassist1}
+                alt="IOL Assist Viscoelastic"
+                width={208}
+                height={450}
+                style={{
+                  border: '1px solid hsl(var(--palette-gray-10))',
+                  borderRadius: '30px',
+                }}
+              />
+            </Flex>{' '}
+          </Anchor>
         </section>
         <section>
           <Typography modifiers="heading2" size={fontSizes['--header2']}>

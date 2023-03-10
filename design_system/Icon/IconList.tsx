@@ -74,6 +74,25 @@ export const TwitterIcon = () => {
   );
 };
 
+export const BackArrow = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="hsl(var(--palette-green-75))"
+      role="img"
+    >
+      <title>Arrow</title>
+      <desc>An icon representing an arrow</desc>
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12,19 5,12 12 5"></polyline>
+    </svg>
+  );
+};
+
 export const GitHubIcon = () => {
   return (
     <StyledSVG

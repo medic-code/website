@@ -29,6 +29,11 @@ const GlobalStyles = createGlobalStyle`
         ${primaryFont};
         ${palette}
     }
+
+    img {
+        max-width: 100%;
+        overflow: hidden;
+    }
 `;
 
 export default GlobalStyles;

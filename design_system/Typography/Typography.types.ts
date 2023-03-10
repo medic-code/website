@@ -3,6 +3,7 @@ export default interface TextProps
   modifiers?: string;
   size?: string;
   margin?: string;
+  fontWeight?: string;
 }
 
 export interface IProps {

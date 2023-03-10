@@ -17,6 +17,8 @@ import {
   FooterPadding,
 } from './Styles';
 
+import { BASE_URL } from '../../../core/constants';
+
 const Footer = () => {
   return (
     <footer>
@@ -37,12 +39,12 @@ const Footer = () => {
                   Home
                 </Typography>
               </Anchor>
-              <Anchor modifiers="underline" href="#about">
+              <Anchor modifiers="underline" href={BASE_URL + '/#about'}>
                 <Typography modifiers="heading3" size={fontSizes['--header3']}>
                   About
                 </Typography>
               </Anchor>
-              <Anchor href="#projects">
+              <Anchor href={BASE_URL + '/#projects'}>
                 <Typography modifiers="heading3" size={fontSizes['--header3']}>
                   Projects
                 </Typography>
