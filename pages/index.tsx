@@ -88,16 +88,17 @@ const indexPage = () => {
         <section>
           <Typography
             id="projects"
-            modifiers="heading2"
-            size={fontSizes['--header2']}
+            modifiers="heading1"
+            size={fontSizes['--header1']}
           >
             Projects
           </Typography>
           <Anchor href="/iolassist">
             <Typography
-              modifiers="modifiedHeading3"
-              size={fontSizes['--header3']}
+              modifiers="modifiedHeading2"
+              size={fontSizes['--header2']}
               className="navtest"
+              color="hsl(var(--palette-green-75))"
             >
               IOL Assist
             </Typography>
@@ -105,7 +106,7 @@ const indexPage = () => {
               A mobile app to support cataract surgeons with intra-ocular lens
               choices
             </Typography>
-            <Flex gap="16px">
+            <Flex gap="16px" justifyContent="center" align-items="center">
               <Image
                 src={iolassist}
                 alt="IOL Assist Lens"
@@ -130,7 +131,7 @@ const indexPage = () => {
           </Anchor>
         </section>
         <section>
-          <Typography modifiers="heading2" size={fontSizes['--header2']}>
+          <Typography modifiers="heading1" size={fontSizes['--header1']}>
             Contact Me
           </Typography>
           <Typography modifiers="paragraph" size={fontSizes['--paragraph']}>

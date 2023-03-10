@@ -44,6 +44,8 @@ const StyledText = styled.p<IProps>`
   padding: 0;
   margin: ${(props) => props.margin || '0px'};
   line-height: 1.9;
+  letter-spacing: 0.3px;
+  text-rendering: optimizelegibility;
   margin-bottom: 1rem;
   font-size: ${(props) => (props.size ? props.size : fontSizes['--paragraph'])};
   font-family: ${primaryFont};

@@ -18,7 +18,7 @@ export const fontSizes = {
 };
 
 export const fontWeights = {
-  '--normal': '300',
+  '--normal': '400',
   '--400': '400',
   '--semibold': '500',
   '--bold': '600',

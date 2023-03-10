@@ -15,7 +15,7 @@ const About = () => {
           <Typography
             id="about"
             modifiers="heading1"
-            size={fontSizes['--header2']}
+            size={fontSizes['--header1']}
           >
             About Me
           </Typography>
