@@ -76,7 +76,7 @@ jobs:
     needs: install-cache
     steps:
       - name: Checkout Commit
-        uses: action/checkout@v3
+        uses: actions/checkout@v3
       - name: Uses Node.js ${{matrix.node}}
         uses: actions/setup-node@v3
       - name: Restory NPM dependencies
