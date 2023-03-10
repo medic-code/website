@@ -98,6 +98,7 @@ const indexPage = () => {
               modifiers="modifiedHeading2"
               size={fontSizes['--header2']}
               className="navtest"
+              color="hsl(var(--palette-green-75))"
             >
               IOL Assist
             </Typography>
@@ -105,7 +106,7 @@ const indexPage = () => {
               A mobile app to support cataract surgeons with intra-ocular lens
               choices
             </Typography>
-            <Flex gap="16px">
+            <Flex gap="16px" justifyContent="center" align-items="center">
               <Image
                 src={iolassist}
                 alt="IOL Assist Lens"
