@@ -27,8 +27,8 @@ const Footer = () => {
         <FooterWrapper>
           <FooterContent>
             <Typography
-              modifiers="heading2"
-              size={fontSizes['--header2']}
+              modifiers="heading1"
+              size={fontSizes['--header1']}
               color="hsl(187 15% 87%)"
             >
               Aaron Smith

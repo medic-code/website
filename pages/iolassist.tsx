@@ -78,7 +78,7 @@ const IolAssist = () => {
             <Typography
               margin="16px 0px 0px 0px"
               fontWeight="var(--semibold)"
-              size={fontSizes['--header2']}
+              size={fontSizes['--header1']}
               color="hsl(var(--palette-green-75))"
             >
               The Project
@@ -144,7 +144,7 @@ const IolAssist = () => {
             </Typography>
           </section>
           <section>
-            <Typography modifiers="heading2" size={fontSizes['--header2']}>
+            <Typography modifiers="heading1" size={fontSizes['--header1']}>
               Technical Details
             </Typography>
             <Typography size={fontSizes['--paragraph']}>
@@ -187,7 +187,7 @@ const IolAssist = () => {
             </Typography>
           </section>
           <section>
-            <Typography modifiers="heading2" size={fontSizes['--header2']}>
+            <Typography modifiers="heading1" size={fontSizes['--header1']}>
               Personal Growth
             </Typography>
             <Typography modifiers="heading3" size={fontSizes['--header3']}>
