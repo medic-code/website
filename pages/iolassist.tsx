@@ -51,7 +51,7 @@ const IolAssist = () => {
               A mobile app to support cataract surgeons with intra-ocular lens
               choices
             </Typography>
-            <Flex gap="16px">
+            <Flex gap="16px" justifyContent="center">
               <Image
                 src={iolassist}
                 alt="IOL Assist Lens"
