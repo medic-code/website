@@ -20,6 +20,6 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "core/components/About/__tests__/about.test.js", "cypress/e2e/index.cy.js"],
-  "exclude": ["node_modules", "./cypress.config.ts"],
+  "exclude": ["node_modules", "./cypress.config.ts","cypress/support/"],
   "files": ["./cypress.config.ts"]
 }
