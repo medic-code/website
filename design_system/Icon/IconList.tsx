@@ -83,7 +83,6 @@ export const BackArrow = () => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="hsl(var(--palette-green-75))"
-      stroke-width="2"
       role="img"
     >
       <title>Arrow</title>
