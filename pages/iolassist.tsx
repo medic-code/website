@@ -79,6 +79,7 @@ const IolAssist = () => {
               margin="16px 0px 0px 0px"
               fontWeight="var(--semibold)"
               size={fontSizes['--header2']}
+              color="hsl(var(--palette-green-75))"
             >
               The Project
             </Typography>
