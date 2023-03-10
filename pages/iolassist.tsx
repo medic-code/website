@@ -28,7 +28,7 @@ const IolAssist = () => {
             <Anchor href="/">
               <LogoIcon />
             </Anchor>
-            <Anchor href="/">
+            <Anchor href="/" className="testbtn">
               <Flex alignItems="center">
                 <BackArrow />
                 Home

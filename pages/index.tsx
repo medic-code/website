@@ -97,6 +97,7 @@ const indexPage = () => {
             <Typography
               modifiers="modifiedHeading3"
               size={fontSizes['--header3']}
+              className="navtest"
             >
               IOL Assist
             </Typography>
