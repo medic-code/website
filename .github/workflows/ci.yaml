@@ -113,4 +113,64 @@ jobs:
       - name: Run tests 
         run: |
           npm run test
- 
+  build: 
+    runs-on: ubuntu-latest
+    strategy: 
+      matrix:
+        node: [16]
+    needs: install-cache
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v3
+      - name: use node.js ${{matrix.node}}
+        uses: actions/setup-node@v3
+      - name: restore npm dependencies
+        uses: actions/cache@v3
+        id: cache-dependencies
+        with: 
+          path: node_modules
+          key: ${{runner.os}}-npm-${{hashFiles('**/package-lock.json')}}
+          restore-keys: |
+            ${{runner.os}}-npm-$
+      - name: Build
+        run: |
+          npm run build
+
+  cypress: 
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: 
+        node: [16]
+    needs: build
+    steps: 
+      - name: Checkout Commit
+        uses: actions/checkout@v3
+      - name: use node.js ${{matrix.node}}
+        uses: actions/setup-node@v3
+      - name: restore npm dependencies
+        uses: actions/cache@v3
+        id: cache-dependencies
+        with:  
+          path: node_modules
+          key: ${{runner.os}}-npm-${{hashFiles('**/package-lock.json')}}
+          restore-keys: |
+            ${{runner.os}}-npm-$
+      - name: Restore cypress cache dependencies
+        id: cache-cypress-binary
+        uses: actions/cache@v3
+        with: 
+          path: ~/.cache/Cypress
+          key: cypress-binary-${{hashFiles('**/package-lock.json')}}
+          restore-keys: |
+            cypress-binary-
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with: 
+          name: build-output
+          path: .next
+      - name: Run cypress
+        uses: cypress-io/github-action@v4.2.0
+        with:
+          start: npm run start
+          browser: chrome
+          install: false
