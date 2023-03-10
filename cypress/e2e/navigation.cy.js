@@ -7,10 +7,10 @@ describe('Navigation testing', () => {
     cy.wait(1000);
   });
 
-  it('User can go from project page to home page',() => {
+  it('User can go from project page to home page', () => {
     cy.visit('/iolassist');
     cy.get('.testbtn').click();
-    cy.url().should('include','/');
+    cy.url().should('include', '/');
     cy.contains('Aaron Smith');
-  })
+  });
 });
