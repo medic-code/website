@@ -17,7 +17,7 @@ import {
   FooterPadding,
 } from './Styles';
 
-import { BASE_URL } from '@/core/constants';
+import { BASE_URL } from '../../../core/constants';
 
 const Footer = () => {
   return (
