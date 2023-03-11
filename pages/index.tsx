@@ -22,6 +22,22 @@ import React from 'react';
 
 import styled from 'styled-components';
 
+const Break = styled.div`
+  display: none;
+  flex-basis: 100%;
+  height: 0;
+  @media (max-width: 550px) {
+    display: revert;
+  }
+`;
+
+const StyledAnchor = styled(Anchor)`
+  margin: 0 0 0 auto;
+  @media (max-width: 550px) {
+    margin: 0;
+  }
+`;
+
 const ImagePlaceHolder = styled.div`
   width: 100%;
   height: 200px;
@@ -53,14 +69,14 @@ const indexPage = () => {
           <Flex gap="16px" justifyContent="flex-start">
             <Button onClick={() => handleClick('about')}>About Me</Button>
             <Button onClick={() => handleClick('projects')}>Projects</Button>
-            <Anchor
+            <Break></Break>
+            <StyledAnchor
               href="https://stackoverflow.com/users/12566046/aarons?tab=profile"
               target="_blank"
               rel="noopener noreferrer"
-              margin="0 0 0 auto"
             >
               <StackOverflowIcon />
-            </Anchor>
+            </StyledAnchor>
             <Anchor
               href="http://www.twitter.com/aaronsmithdev"
               target="_blank"
