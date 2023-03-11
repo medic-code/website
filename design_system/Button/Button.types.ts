@@ -1,6 +1,7 @@
 export interface StyleProp {
   size?: string;
   fontWeight?: string;
+  margin?: string;
 }
 
 export default interface ButtonProps
@@ -9,4 +10,5 @@ export default interface ButtonProps
   children: React.ReactNode;
   size?: string;
   fontWeight?: string;
+  margin?: string;
 }
