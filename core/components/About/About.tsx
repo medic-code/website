@@ -3,7 +3,7 @@ import {
   fontSizes,
   Grid,
   Box,
-  Button,
+  Anchor,
 } from '../../../design_system/index';
 import { Section, StyledCV } from './styles';
 
@@ -57,7 +57,13 @@ const About = () => {
             bring change through technology from user onboarding all the way
             through to implementation of the tools.
           </Typography>
-          <StyledCV>Curriculum Vitae</StyledCV>
+          <Anchor
+            href="https://drive.google.com/file/d/1IVVA6FRjpMTf_GEHvwb-UZ0ESLu04DXE/view?usp=sharing"
+            target="_blank"
+            rel="noreferrer noop"
+          >
+            <StyledCV>Curriculum Vitae</StyledCV>
+          </Anchor>
         </Box>
       </Grid>
     </Section>
