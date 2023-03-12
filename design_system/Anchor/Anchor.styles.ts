@@ -4,9 +4,7 @@ import { applyStyleModifiers } from 'styled-components-modifiers';
 
 const ANCHOR_MODIFIERS = {
   underline: () => `
-        &:hover {
-          border-bottom: 3px solid hsl(var(--palette-green-75));
-      }
+       text-decoration: underline;
     `,
 };
 
@@ -21,7 +19,8 @@ const StyledAnchor = styled.a<AnchorProps>`
   font-family: inherit;
   font-weight: ${fontWeights['--bold']};
   font-size: ${(props) => (props.size ? props.size : fontSizes['--paragraph'])};
-  color: hsl(var(--palette-green-75));
+  color: ${(props) =>
+    props.color ? props.color : 'hsl(var(--palette-blue-45))'};
   transition: border-color 0.3s ease, color 0.3s ease;
   word-break: break-word;
   outline: none;
