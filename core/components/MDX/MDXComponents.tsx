@@ -9,7 +9,7 @@ import {
 import MDXImage from './Image';
 
 const MDXComponents = {
-  a: function A(props) {
+  a: function A(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
     return <Anchor {...props} />;
   },
   p: function P(props) {
@@ -39,7 +39,7 @@ const MDXComponents = {
       />
     );
   },
-  h3: function H3(props) {
+  h3: function H3(props: React.HTMLAttributes) {
     return (
       <Typography
         {...props}
@@ -48,12 +48,21 @@ const MDXComponents = {
       />
     );
   },
+  h4: function H4(props: React.HTMLAttributes) {
+    return (
+      <Typography
+        {...props}
+        modifiers="heading4"
+        size={fontSizes['--header4']}
+      />
+    );
+  },
   Button,
   Image: MDXImage,
-  ol: function OL(props) {
+  ol: function OL(props: React.OlHTMLAttributes<HTMLOListElement>) {
     return <List variant="ordered" {...props} />;
   },
-  ul: function UL(props) {
+  ul: function UL(props: React.HTMLAttributes<HTMLUListElement>) {
     return <List {...props} />;
   },
   Pill,

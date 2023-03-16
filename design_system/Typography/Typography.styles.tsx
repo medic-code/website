@@ -38,6 +38,12 @@ const TEXT_MODIFIERS = {
     margin: 1rem 0 0rem 0;
     color: hsl(var(--palette-green-75));
   `,
+  modifiedHeading4: () => `
+  font-weight: ${fontWeights['--400']};
+  line-height: 1.6818;
+  margin: 1rem 0 0rem 0;
+  color: hsl(var(--palette-green-75));
+`,
 };
 
 const StyledText = styled.p<IProps>`
