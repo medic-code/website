@@ -9,9 +9,7 @@ export const StyledListItem = styled.li`
   letter-spacing: 0.3px;
 `;
 
-export const StyledUnorderedList = styled.ul`
-  list-style-type: none;
-`;
+export const StyledUnorderedList = styled.ul``;
 export const StyledOrderedList = styled.ol`
   list-style-type: decimal;
 `;

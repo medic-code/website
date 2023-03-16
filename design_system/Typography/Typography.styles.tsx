@@ -41,12 +41,11 @@ const TEXT_MODIFIERS = {
 };
 
 const StyledText = styled.p<IProps>`
-  padding: 0;
-  margin: ${(props) => props.margin || '0px'};
+  padding: 0px;
+  margin: ${(props) => props.margin};
   line-height: 1.9;
   letter-spacing: 0.3px;
-  text-rendering: optimizelegibility;
-  margin-bottom: 1rem;
+  text-rendering: optimizeLegibility;
   font-size: ${(props) => (props.size ? props.size : fontSizes['--paragraph'])};
   font-family: ${primaryFont};
   font-weight: ${(props) =>
