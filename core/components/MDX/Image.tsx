@@ -9,7 +9,7 @@ const StyledFigure = styled.figure`
 const MDXImage = (props: ImageProps) => {
   return (
     <>
-      <Image {...props} quality={70} />
+      <Image {...props} quality={70} alt={props.alt} />
       <StyledFigure>
         <Typography size={fontSizes['--paragraph']}>{props.alt}</Typography>
       </StyledFigure>
