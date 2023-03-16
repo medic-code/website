@@ -3,6 +3,7 @@ import { MDXRemote } from 'next-mdx-remote';
 
 import { getFiles, getFileBySlug } from '@/lib/mdx';
 import MDXComponents from '@/core/components/MDX/MDXComponents';
+import BlogLayout from '@/core/BlogLayout/index';
 
 const Blog = ({ post }) => {
   const { isFallback } = useRouter();
@@ -13,7 +14,9 @@ const Blog = ({ post }) => {
 
   return (
     <div>
-      <MDXRemote {...post.mdxSource} components={{ ...MDXComponents }} />
+      <BlogLayout frontMatter={post.frontMatter}>
+        <MDXRemote {...post.mdxSource} components={{ ...MDXComponents }} />
+      </BlogLayout>
     </div>
   );
 };

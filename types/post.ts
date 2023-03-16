@@ -3,7 +3,7 @@ export type Post = {
   slug: string;
   title: string;
   subtitle: string;
-  updated: string;
+  lastUpdated: string;
   keywords?: string[];
   categories?: string[];
 };

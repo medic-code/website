@@ -4,6 +4,10 @@ import About from '../core/components/About';
 import Image from 'next/image';
 import iolassist from '../public/Images/1.svg';
 import iolassist1 from '../public/Images/2.svg';
+import Link from 'next/link';
+import { dateToMonthYear } from '@/lib/dates';
+
+import { Post } from '../types/post';
 
 import {
   Grid,
@@ -18,9 +22,10 @@ import {
   Anchor,
   GitHubIcon,
 } from '../design_system/index';
-import React from 'react';
+import { useState, useEffect } from 'react';
 
 import styled from 'styled-components';
+import { getAllFilesFrontMatter } from '@/lib/mdx';
 
 const Break = styled.div`
   display: none;
@@ -38,12 +43,9 @@ const StyledAnchor = styled(Anchor)`
   }
 `;
 
-const ImagePlaceHolder = styled.div`
-  width: 100%;
-  height: 200px;
-  background-color: grey;
-  margin-top: 20px;
-`;
+interface Props {
+  posts: Post[];
+}
 
 const handleClick = (sectionId: string) => {
   const element = document.getElementById(sectionId);
@@ -52,7 +54,13 @@ const handleClick = (sectionId: string) => {
   }
 };
 
-const indexPage = () => {
+const IndexPage = (props: Props) => {
+  const { posts } = props;
+
+  const [year, setYear] = useState(0);
+
+  useEffect(() => {}, [year]);
+
   return (
     <>
       <Header />
@@ -101,6 +109,60 @@ const indexPage = () => {
           </Flex>
         </section>
         <About />
+        <section>
+          <Typography
+            id="projects"
+            modifiers="heading1"
+            size={fontSizes['--header1']}
+          >
+            All Articles
+          </Typography>
+          <ul style={{ padding: 0 }}>
+            {posts.map((post) => {
+              const currentYear = new Date(`${post.date}`).getFullYear();
+              let printYear;
+              if (currentYear !== year) {
+                printYear = true;
+                setYear(currentYear);
+              } else {
+                printYear = false;
+              }
+              return (
+                <li key={post.slug} style={{ listStyle: 'none', padding: 0 }}>
+                  {printYear ? (
+                    <Typography
+                      modifiers="heading1"
+                      size={fontSizes['--header1']}
+                    >
+                      {currentYear}
+                    </Typography>
+                  ) : null}
+
+                  <Link href={`/posts/${post.slug}`}>
+                    <Flex alignItems="center" gap="48px">
+                      <Typography
+                        modifiers="heading4"
+                        size={fontSizes['--header4']}
+                        color="hsl(var(--palette-grey-75))"
+                        fontWeight="bold"
+                      >
+                        {dateToMonthYear(
+                          new Date(Date.parse(`${post.date}`)).toString()
+                        )}
+                      </Typography>
+                      <Typography
+                        modifiers="heading3"
+                        size={fontSizes['--header3']}
+                      >
+                        {post.title}
+                      </Typography>
+                    </Flex>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
         <section>
           <Typography
             id="projects"
@@ -163,4 +225,9 @@ const indexPage = () => {
   );
 };
 
-export default indexPage;
+export async function getStaticProps() {
+  const posts = await getAllFilesFrontMatter();
+  return { props: { posts } };
+}
+
+export default IndexPage;
