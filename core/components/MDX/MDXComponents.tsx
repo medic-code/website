@@ -4,6 +4,7 @@ import {
   Button,
   fontSizes,
   List,
+  Pill,
 } from '@/design_system/index';
 import MDXImage from './Image';
 
@@ -55,6 +56,7 @@ const MDXComponents = {
   ul: function UL(props) {
     return <List {...props} />;
   },
+  Pill,
 };
 
 export default MDXComponents;
