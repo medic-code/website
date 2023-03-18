@@ -1,9 +1,9 @@
 interface OrderedListProps extends React.OlHTMLAttributes<HTMLOListElement> {
-  variant: 'ordered';
+  variant?: 'ordered';
 }
 
 interface UnorderedListProps extends React.HTMLAttributes<HTMLUListElement> {
-  variant: 'unordered';
+  variant?: 'unordered';
 }
 
 export type ListTypes = OrderedListProps | UnorderedListProps;

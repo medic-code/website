@@ -1,3 +1,4 @@
+import UnderlineAnchorProps from '@/design_system/Anchor/Anchor.types';
 import {
   Anchor,
   Typography,
@@ -7,12 +8,13 @@ import {
   Pill,
 } from '@/design_system/index';
 import MDXImage from './Image';
+import { ListTypes } from '@/design_system/List/types';
 
 const MDXComponents = {
-  a: function A(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
+  a: function A(props: UnderlineAnchorProps) {
     return <Anchor {...props} />;
   },
-  p: function P(props) {
+  p: function P(props: React.HTMLAttributes<HTMLParagraphElement>) {
     return (
       <Typography
         {...props}
@@ -21,7 +23,7 @@ const MDXComponents = {
       />
     );
   },
-  h1: function H1(props) {
+  h1: function H1(props: React.HTMLAttributes<HTMLHeadingElement>) {
     return (
       <Typography
         {...props}
@@ -30,7 +32,7 @@ const MDXComponents = {
       />
     );
   },
-  h2: function H2(props) {
+  h2: function H2(props: React.HTMLAttributes<HTMLHeadingElement>) {
     return (
       <Typography
         {...props}
@@ -39,7 +41,7 @@ const MDXComponents = {
       />
     );
   },
-  h3: function H3(props: React.HTMLAttributes) {
+  h3: function H3(props: React.HTMLAttributes<HTMLHeadingElement>) {
     return (
       <Typography
         {...props}
@@ -48,7 +50,7 @@ const MDXComponents = {
       />
     );
   },
-  h4: function H4(props: React.HTMLAttributes) {
+  h4: function H4(props: React.HTMLAttributes<HTMLHeadingElement>) {
     return (
       <Typography
         {...props}
@@ -59,10 +61,10 @@ const MDXComponents = {
   },
   Button,
   Image: MDXImage,
-  ol: function OL(props: React.OlHTMLAttributes<HTMLOListElement>) {
-    return <List variant="ordered" {...props} />;
+  ol: function OL(props: ListTypes) {
+    return <List {...props} />;
   },
-  ul: function UL(props: React.HTMLAttributes<HTMLUListElement>) {
+  ul: function UL(props: ListTypes) {
     return <List {...props} />;
   },
   Pill,

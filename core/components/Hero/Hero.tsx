@@ -9,6 +9,7 @@ import {
 } from '../../../design_system/index';
 
 import styled from 'styled-components';
+import { HeroProps } from './types';
 
 const IconPadding = styled.div`
   padding-top: 20px;
@@ -18,7 +19,7 @@ const HeroPadding = styled.div`
   padding-bottom: 20px;
 `;
 
-export const Hero = ({ title, date, lastUpdated }) => {
+export const Hero = ({ title, date, lastUpdated }: HeroProps) => {
   return (
     <>
       <Flex flexDirection="column" alignItems="flex-start" gap="32px">

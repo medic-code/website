@@ -1,3 +1,5 @@
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+
 export type Post = {
   date: string;
   slug: string;
@@ -6,4 +8,12 @@ export type Post = {
   lastUpdated: string;
   keywords?: string[];
   categories?: string[];
+};
+
+export type getFilePost = {
+  post: FrontMatterPost;
+};
+export type FrontMatterPost = {
+  frontMatter: Post;
+  mdxSource: MDXRemoteSerializeResult;
 };

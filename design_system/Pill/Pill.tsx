@@ -1,6 +1,7 @@
+import { HTMLAttributes } from 'react';
 import { StyledPill } from './styles';
 
-const Pill = (props) => {
+const Pill = (props: HTMLAttributes<HTMLDivElement>) => {
   const { children } = props;
   return (
     <>
