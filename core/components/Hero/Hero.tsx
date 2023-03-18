@@ -53,7 +53,8 @@ export const Hero = ({ title, date, lastUpdated }: HeroProps) => {
         <Typography
           color="hsl(var(--palette-gray-65));"
           fontWeight="--semibold"
-          size={fontSizes['--paragraph']}
+          margin="0 0 8px 0"
+          size={fontSizes['--caption']}
         >
           Posted: {date}
         </Typography>

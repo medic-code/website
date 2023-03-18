@@ -48,7 +48,7 @@ const TEXT_MODIFIERS = {
 
 const StyledText = styled.p<IProps>`
   padding: 0px;
-  margin: ${(props) => props.margin};
+  margin: ${(props) => props.margin || '0px'};
   line-height: 1.9;
   letter-spacing: 0.3px;
   text-rendering: optimizeLegibility;
