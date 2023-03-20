@@ -69,7 +69,6 @@ const StyledAnchor = styled(Anchor)`
 const StyledDate = styled(Typography)`
   margin: 0px;
   font-size: var(--paragraph);
-  color: hsl(var(--palette-grey-25));
   min-width: 60px;
 `;
 
