@@ -53,7 +53,7 @@ const Block = styled.div`
 
   @media (hover: hover) {
     &:hover {
-      background-color: hsl(var(--palette-blue-15));
+      background-color: hsl(var(--palette-blue-05));
       color: hsl(var(--palette-blue-55));
     }
   }
