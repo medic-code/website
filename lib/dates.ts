@@ -41,3 +41,7 @@ export const dateToMonthYear = (date: string) => {
 const addZeroToDay = (day: number) => {
   return day < 10 ? '0' + String(day) : String(day);
 };
+
+export const getYearFromDate = (date: string) => {
+  return new Date(date).getFullYear().toString();
+};

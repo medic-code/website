@@ -5,7 +5,7 @@ import Image from 'next/image';
 import iolassist from '../public/Images/1.svg';
 import iolassist1 from '../public/Images/2.svg';
 import Link from 'next/link';
-import { dateToMonthYear } from '@/lib/dates';
+import { dateToMonthYear, getYearFromDate } from '@/lib/dates';
 
 import { Post } from '../types/post';
 
@@ -87,6 +87,10 @@ const handleClick = (sectionId: string) => {
 const IndexPage = (props: Props) => {
   const { posts } = props;
 
+  const sortedByYearPosts = posts.sort((post1, post2) =>
+    getYearFromDate(post1.date) > getYearFromDate(post2.date) ? -1 : 1
+  );
+
   let year = 0;
 
   return (
@@ -138,15 +142,11 @@ const IndexPage = (props: Props) => {
         </section>
         <About />
         <section>
-          <Typography
-            id="projects"
-            modifiers="heading1"
-            size={fontSizes['--header1']}
-          >
+          <Typography modifiers="heading1" size={fontSizes['--header1']}>
             All Articles
           </Typography>
           <ul style={{ padding: 0 }}>
-            {posts.map((post) => {
+            {sortedByYearPosts.map((post) => {
               const currentYear = new Date(post.date).getFullYear();
               let printYear;
               if (currentYear !== year) {
