@@ -33,7 +33,7 @@ const TEXT_MODIFIERS = {
   `,
 
   modifiedHeading3: () => `
-    font-weight: ${fontWeights['--400']};
+    font-weight: ${fontWeights['--bold']};
     line-height: 1.6818;
     margin: 1rem 0 0rem 0;
     color: hsl(var(--palette-green-75));
@@ -48,7 +48,7 @@ const TEXT_MODIFIERS = {
 
 const StyledText = styled.p<IProps>`
   padding: 0px;
-  margin: ${(props) => props.margin || '0px'};
+  margin: ${(props) => props.margin || '0 0 1rem 0'};
   line-height: 1.9;
   letter-spacing: 0.3px;
   text-rendering: optimizeLegibility;

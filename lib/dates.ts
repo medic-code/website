@@ -33,7 +33,11 @@ export const dateToMonthYear = (date: string) => {
   const month: number = parsedDate.getMonth();
   const convertedMonth: string =
     MONTH_CONVERT[month as keyof typeof MONTH_CONVERT];
-  const day: number = parsedDate.getDate();
+  const day: string = addZeroToDay(parsedDate.getDate());
 
   return `${convertedMonth} ${day}`;
+};
+
+const addZeroToDay = (day: number) => {
+  return day < 10 ? '0' + String(day) : String(day);
 };

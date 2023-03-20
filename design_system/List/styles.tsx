@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export const StyledListItem = styled.li`
   list-style: none;
   display: flex;
-  marginbottom: 1rem;
+  margin-bottom: 1rem;
   padding: 0;
-  lineheight: 1.9;
+  line-height: 1.9;
   letter-spacing: 0.3px;
 `;
 
