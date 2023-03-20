@@ -36,6 +36,29 @@ const Break = styled.div`
   }
 `;
 
+const Block = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 32px;
+  color: hsl(var(--palette-gray-65));
+  background-color: transparent;
+  margin-left: -16px;
+  padding-left: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-top: -16px;
+  margin-bottom: -16px;
+  border-radius: 8px;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: hsl(var(--palette-blue-15));
+      color: hsl(var(--palette-blue-55));
+    }
+  }
+`;
+
 const StyledAnchor = styled(Anchor)`
   margin: 0 0 0 auto;
   @media (max-width: 550px) {
@@ -64,9 +87,7 @@ const handleClick = (sectionId: string) => {
 const IndexPage = (props: Props) => {
   const { posts } = props;
 
-  const [year, setYear] = useState(0);
-
-  useEffect(() => {}, [year]);
+  let year = 0;
 
   return (
     <>
@@ -126,45 +147,44 @@ const IndexPage = (props: Props) => {
           </Typography>
           <ul style={{ padding: 0 }}>
             {posts.map((post) => {
-              const currentYear = new Date(`${post.date}`).getFullYear();
+              const currentYear = new Date(post.date).getFullYear();
               let printYear;
               if (currentYear !== year) {
                 printYear = true;
-                setYear(currentYear);
+                year = currentYear;
               } else {
                 printYear = false;
               }
               return (
-                <li key={post.slug} style={{ listStyle: 'none', padding: 0 }}>
+                <li
+                  key={post.slug}
+                  style={{
+                    listStyle: 'none',
+                    padding: 0,
+                    marginBottom: '1rem',
+                  }}
+                >
                   {printYear ? (
                     <Typography
-                      modifiers="heading1"
-                      size={fontSizes['--header1']}
+                      modifiers="header3"
+                      size={fontSizes['--header3']}
+                      margin="32px 0px"
+                      fontWeight="var(--semibold)"
                     >
                       {currentYear}
                     </Typography>
                   ) : null}
 
-                  <Link href={`/posts/${post.slug}`}>
-                    <Flex alignItems="center" gap="48px">
-                      <Typography
-                        modifiers="heading4"
-                        size={fontSizes['--header4']}
-                        color="hsl(var(--palette-grey-75))"
-                        fontWeight="bold"
-                      >
+                  <Anchor href={`/posts/${post.slug}`}>
+                    <Block>
+                      <StyledDate>
                         {dateToMonthYear(
                           new Date(Date.parse(`${post.date}`)).toString()
                         )}
-                      </Typography>
-                      <Typography
-                        modifiers="heading3"
-                        size={fontSizes['--header3']}
-                      >
-                        {post.title}
-                      </Typography>
-                    </Flex>
-                  </Link>
+                      </StyledDate>
+                      {post.title}
+                    </Block>
+                  </Anchor>
                 </li>
               );
             })}
