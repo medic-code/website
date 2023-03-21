@@ -5,6 +5,7 @@ export type Post = {
   slug: string;
   title: string;
   subtitle: string;
+  type: string;
   lastUpdated: string;
   keywords?: string[];
   categories?: string[];
@@ -13,6 +14,7 @@ export type Post = {
 export type getFilePost = {
   post: FrontMatterPost;
 };
+
 export type FrontMatterPost = {
   frontMatter: Post;
   mdxSource: MDXRemoteSerializeResult;

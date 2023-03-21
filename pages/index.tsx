@@ -145,48 +145,75 @@ const IndexPage = (props: Props) => {
             All Articles
           </Typography>
           <ul style={{ padding: 0 }}>
-            {sortedByYearPosts.map((post) => {
-              const currentYear = new Date(post.date).getFullYear();
-              let printYear;
-              if (currentYear !== year) {
-                printYear = true;
-                year = currentYear;
-              } else {
-                printYear = false;
-              }
-              return (
-                <li
-                  key={post.slug}
-                  style={{
-                    listStyle: 'none',
-                    padding: 0,
-                    marginBottom: '1rem',
-                  }}
-                >
-                  {printYear ? (
-                    <Typography
-                      modifiers="header3"
-                      size={fontSizes['--header3']}
-                      margin="32px 0px"
-                      fontWeight="var(--semibold)"
-                    >
-                      {currentYear}
-                    </Typography>
-                  ) : null}
+            {sortedByYearPosts
+              .filter((post) => post.type === 'article')
+              .map((post) => {
+                const currentYear = new Date(post.date).getFullYear();
+                let printYear;
+                if (currentYear !== year) {
+                  printYear = true;
+                  year = currentYear;
+                } else {
+                  printYear = false;
+                }
+                return (
+                  <li
+                    key={post.slug}
+                    style={{
+                      listStyle: 'none',
+                      padding: 0,
+                      marginBottom: '1rem',
+                    }}
+                  >
+                    {printYear ? (
+                      <Typography
+                        modifiers="header3"
+                        size={fontSizes['--header3']}
+                        margin="32px 0px"
+                        fontWeight="var(--semibold)"
+                      >
+                        {currentYear}
+                      </Typography>
+                    ) : null}
 
-                  <Anchor href={`/posts/${post.slug}`}>
-                    <Block>
-                      <StyledDate>
-                        {dateToMonthYear(
-                          new Date(Date.parse(`${post.date}`)).toString()
-                        )}
-                      </StyledDate>
-                      {post.title}
-                    </Block>
-                  </Anchor>
-                </li>
-              );
-            })}
+                    <Anchor href={`/posts/${post.slug}`}>
+                      <Block>
+                        <StyledDate>
+                          {dateToMonthYear(
+                            new Date(Date.parse(`${post.date}`)).toString()
+                          )}
+                        </StyledDate>
+                        {post.title}
+                      </Block>
+                    </Anchor>
+                  </li>
+                );
+              })}
+          </ul>
+        </section>
+        <section>
+          <Typography modifiers="heading1" size={fontSizes['--header1']}>
+            Book Reviews
+          </Typography>
+          <ul style={{ padding: '0px' }}>
+            {sortedByYearPosts
+              .filter((post) => post.type === 'blog')
+              .map((post) => {
+                return (
+                  <li
+                    key={post.slug}
+                    style={{
+                      padding: '0px',
+                      marginBottom: '1rem',
+                      listStyle: 'none',
+                    }}
+                  >
+                    <Anchor href={`/posts/${post.slug}`}>
+                      <Block>{post.title}</Block>
+                    </Anchor>
+                  </li>
+                );
+              })}
           </ul>
         </section>
         <section>
