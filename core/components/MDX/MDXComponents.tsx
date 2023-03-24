@@ -62,7 +62,7 @@ const MDXComponents = {
   Button,
   Image: MDXImage,
   ol: function OL(props: ListTypes) {
-    return <List {...props} />;
+    return <List variant="ordered" {...props} />;
   },
   ul: function UL(props: ListTypes) {
     return <List {...props} />;
