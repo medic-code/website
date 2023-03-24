@@ -193,7 +193,7 @@ const IndexPage = (props: Props) => {
         </section> */}
         <section>
           <Typography modifiers="heading1" size={fontSizes['--header1']}>
-            Core Ideas - Books
+            Core Ideas from Books
           </Typography>
           <ul style={{ padding: '0px' }}>
             {sortedByYearPosts
