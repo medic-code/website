@@ -54,7 +54,7 @@ const About = () => {
           >
             Over two years I have been doing full-stack web development with
             experience in React, React Native and MongoDb. I am passionate about
-            bring change through technology from user onboarding all the way
+            bringing change through technology from user onboarding all the way
             through to implementation of the tools.
           </Typography>
           <Anchor
