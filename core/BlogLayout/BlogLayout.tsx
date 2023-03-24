@@ -12,7 +12,7 @@ const BlogLayout = ({ children, frontMatter }: Props) => {
   const { date, title, lastUpdated } = frontMatter;
   return (
     <Layout footer>
-      <Grid column="1fr minmax(auto,70ch) 1fr">
+      <Grid column="1fr minmax(auto,70ch) 1fr" gap="16px">
         <Hero title={title} date={date} lastUpdated={lastUpdated} />
         <article>{children}</article>
       </Grid>
