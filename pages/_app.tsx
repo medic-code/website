@@ -22,13 +22,15 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router.events]);
   return (
     <>
-      <script
-        async
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}
-      />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
+      {process.env.NODE_ENV === 'production' && (
+        <>
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -36,8 +38,10 @@ export default function App({ Component, pageProps }: AppProps) {
               page_path: window.location.pathname,
             });
           `,
-        }}
-      />
+            }}
+          />
+        </>
+      )}
 
       <GlobalStyles />
       <Component {...pageProps} />
