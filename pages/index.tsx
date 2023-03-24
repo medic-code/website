@@ -4,6 +4,10 @@ import About from '../core/components/About';
 import Image from 'next/image';
 import iolassist from '../public/Images/1.svg';
 import iolassist1 from '../public/Images/2.svg';
+import Link from 'next/link';
+import { dateToMonthYear, getYearFromDate } from '@/lib/dates';
+
+import { Post } from '../types/post';
 
 import {
   Grid,
@@ -18,9 +22,10 @@ import {
   Anchor,
   GitHubIcon,
 } from '../design_system/index';
-import React from 'react';
+import { useState, useEffect } from 'react';
 
 import styled from 'styled-components';
+import { getAllFilesFrontMatter } from '@/lib/mdx';
 
 const Break = styled.div`
   display: none;
@@ -31,6 +36,29 @@ const Break = styled.div`
   }
 `;
 
+const Block = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 32px;
+  color: hsl(var(--palette-gray-65));
+  background-color: transparent;
+  margin-left: -16px;
+  padding-left: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-top: -16px;
+  margin-bottom: -16px;
+  border-radius: 8px;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: hsl(var(--palette-blue-05));
+      color: hsl(var(--palette-blue-55));
+    }
+  }
+`;
+
 const StyledAnchor = styled(Anchor)`
   margin: 0 0 0 auto;
   @media (max-width: 550px) {
@@ -38,12 +66,15 @@ const StyledAnchor = styled(Anchor)`
   }
 `;
 
-const ImagePlaceHolder = styled.div`
-  width: 100%;
-  height: 200px;
-  background-color: grey;
-  margin-top: 20px;
+const StyledDate = styled(Typography)`
+  margin: 0px;
+  font-size: var(--paragraph);
+  min-width: 60px;
 `;
+
+interface Props {
+  posts: Post[];
+}
 
 const handleClick = (sectionId: string) => {
   const element = document.getElementById(sectionId);
@@ -52,7 +83,15 @@ const handleClick = (sectionId: string) => {
   }
 };
 
-const indexPage = () => {
+const IndexPage = (props: Props) => {
+  const { posts } = props;
+
+  const sortedByYearPosts = posts.sort((post1, post2) =>
+    getYearFromDate(post1.date) > getYearFromDate(post2.date) ? -1 : 1
+  );
+
+  const year = 0;
+
   return (
     <>
       <Header />
@@ -101,6 +140,82 @@ const indexPage = () => {
           </Flex>
         </section>
         <About />
+        {/* <section>
+          <Typography modifiers="heading1" size={fontSizes['--header1']}>
+            All Articles
+          </Typography>
+          <ul style={{ padding: 0 }}>
+            {sortedByYearPosts
+              .filter((post) => post.type === 'article')
+              .map((post) => {
+                const currentYear = new Date(post.date).getFullYear();
+                let printYear;
+                if (currentYear !== year) {
+                  printYear = true;
+                  year = currentYear;
+                } else {
+                  printYear = false;
+                }
+                return (
+                  <li
+                    key={post.slug}
+                    style={{
+                      listStyle: 'none',
+                      padding: 0,
+                      marginBottom: '1rem',
+                    }}
+                  >
+                    {printYear ? (
+                      <Typography
+                        modifiers="header3"
+                        size={fontSizes['--header3']}
+                        margin="32px 0px"
+                        fontWeight="var(--semibold)"
+                      >
+                        {currentYear}
+                      </Typography>
+                    ) : null}
+
+                    <Anchor href={`/posts/${post.slug}`}>
+                      <Block>
+                        <StyledDate>
+                          {dateToMonthYear(
+                            new Date(Date.parse(`${post.date}`)).toString()
+                          )}
+                        </StyledDate>
+                        {post.title}
+                      </Block>
+                    </Anchor>
+                  </li>
+                );
+              })}
+          </ul>
+        </section> */}
+        <section>
+          <Typography modifiers="heading1" size={fontSizes['--header1']}>
+            Core Ideas from Books
+          </Typography>
+          <ul style={{ padding: '0px' }}>
+            {sortedByYearPosts
+              .filter((post) => post.type === 'blog')
+              .map((post) => {
+                return (
+                  <li
+                    key={post.slug}
+                    style={{
+                      padding: '0px',
+                      marginBottom: '1rem',
+                      listStyle: 'none',
+                    }}
+                  >
+                    <Anchor href={`/posts/${post.slug}`}>
+                      <Block>{post.title}</Block>
+                    </Anchor>
+                  </li>
+                );
+              })}
+          </ul>
+        </section>
         <section>
           <Typography
             id="projects"
@@ -163,4 +278,9 @@ const indexPage = () => {
   );
 };
 
-export default indexPage;
+export async function getStaticProps() {
+  const posts = await getAllFilesFrontMatter();
+  return { props: { posts } };
+}
+
+export default IndexPage;

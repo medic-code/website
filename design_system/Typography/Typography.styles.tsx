@@ -33,20 +33,25 @@ const TEXT_MODIFIERS = {
   `,
 
   modifiedHeading3: () => `
-    font-weight: ${fontWeights['--400']};
+    font-weight: ${fontWeights['--bold']};
     line-height: 1.6818;
     margin: 1rem 0 0rem 0;
     color: hsl(var(--palette-green-75));
   `,
+  modifiedHeading4: () => `
+  font-weight: ${fontWeights['--400']};
+  line-height: 1.6818;
+  margin: 1rem 0 0rem 0;
+  color: hsl(var(--palette-green-75));
+`,
 };
 
 const StyledText = styled.p<IProps>`
-  padding: 0;
-  margin: ${(props) => props.margin || '0px'};
+  padding: 0px;
+  margin: ${(props) => props.margin || '0 0 1rem 0'};
   line-height: 1.9;
   letter-spacing: 0.3px;
-  text-rendering: optimizelegibility;
-  margin-bottom: 1rem;
+  text-rendering: optimizeLegibility;
   font-size: ${(props) => (props.size ? props.size : fontSizes['--paragraph'])};
   font-family: ${primaryFont};
   font-weight: ${(props) =>
