@@ -24,18 +24,18 @@ const About = () => {
             size={fontSizes['--paragraph']}
             color="hsl(var(--palette-gray-75))"
           >
-            I{"'"}ve been a clinician for over 8 years having worked in over 12
-            different specialities across my career. I{"'"}ve also been a Course
-            Lead in the Online MSc Internal Medicine for 3 years teaching Acute
-            Medicine and Clinical Skills Principles.
+            I{"'"}ve been a clinician for over eight years with experience in
+            over 12 specialities. I{"'"}ve also been a Course Lead in the Online
+            MSc Internal Medicine for three years teaching Acute Medicine and
+            Clinical Skills Principles.
           </Typography>
           <Typography
             size={fontSizes['--paragraph']}
             color="hsl(var(--palette-gray-75))"
           >
-            I value growth and collaboration with others as working with amazing
-            people gives me energy. Life should be a learning journey waiting to
-            be explored.
+            I value growth and collaboration with others, working with amazing
+            people gives me energy. Life should be a learning journey to be
+            explored.
           </Typography>
 
           <Typography
@@ -43,19 +43,19 @@ const About = () => {
             color="hsl(var(--palette-gray-75))"
           >
             I{"'"}ve most recently been a Clinical Lead and Product Owner at a
-            Healthcare Tech company in the cancer space. Helping to steer NHS
-            Stakeholders through using digital products with a key role in
-            clinical governance.
+            Healthcare Tech company in the cancer space. Helping steer NHS
+            Stakeholders through implementing digital products as well as a role
+            in clinical governance.
           </Typography>
 
           <Typography
             size={fontSizes['--paragraph']}
             color="hsl(var(--palette-gray-75))"
           >
-            Over two years I have been doing full-stack web development with
-            experience in React, React Native and MongoDb. I am passionate about
-            bringing change through technology from user onboarding all the way
-            through to implementation of the tools.
+            For over two years, I have been doing full-stack web development
+            with experience in React, React Native and MongoDB. I am passionate
+            about bringing change through technology to user onboarding all the
+            way through to implementation.
           </Typography>
           <Anchor
             href="https://drive.google.com/file/d/1IVVA6FRjpMTf_GEHvwb-UZ0ESLu04DXE/view?usp=sharing"
