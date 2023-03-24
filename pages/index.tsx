@@ -90,7 +90,7 @@ const IndexPage = (props: Props) => {
     getYearFromDate(post1.date) > getYearFromDate(post2.date) ? -1 : 1
   );
 
-  let year = 0;
+  const year = 0;
 
   return (
     <>
@@ -140,7 +140,7 @@ const IndexPage = (props: Props) => {
           </Flex>
         </section>
         <About />
-        <section>
+        {/* <section>
           <Typography modifiers="heading1" size={fontSizes['--header1']}>
             All Articles
           </Typography>
@@ -190,10 +190,10 @@ const IndexPage = (props: Props) => {
                 );
               })}
           </ul>
-        </section>
+        </section> */}
         <section>
           <Typography modifiers="heading1" size={fontSizes['--header1']}>
-            Book Reviews
+            Core Ideas - Books
           </Typography>
           <ul style={{ padding: '0px' }}>
             {sortedByYearPosts
