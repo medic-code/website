@@ -137,9 +137,9 @@ const IolAssist = () => {
               those who are constantly changing locations.
             </Typography>
             <Typography size={fontSizes['--paragraph']}>
-              Additional features of this app include an library of
-              viscoelastics, and Links to the official pages of both IOL and
-              Viscoelastic products as well as links to well known calculators
+              Additional features of this app include a library of viscoelastic,
+              and Links to the official pages of both IOL and Viscoelastic
+              products as well as links to well-known calculators
             </Typography>
           </section>
           <section>
@@ -147,24 +147,25 @@ const IolAssist = () => {
               Technical Details
             </Typography>
             <Typography size={fontSizes['--paragraph']}>
-              The application uses React Native and Expo on the frontend and
-              Express and MongoDb on the backend. React Native and Expo was
-              chosen due to its large 3rd party support, cross platform
-              availability and easy to get setup and start building. Having some
-              experience of React previously made learning React Native easier.
+              The application uses React Native and Expo on the front end and
+              Express and MongoDB on the back end. React Native and Expo were
+              chosen due to their large 3rd party support, cross-platform
+              availability and ease to get set up and start building. Having
+              some experience with React previously made learning React Native
+              easier.
             </Typography>
             <Typography size={fontSizes['--paragraph']}>
               Whilst for large applications Expo would not be particularly best
-              practice particularly when performance is absolute requirement. In
-              this first iteration of the application Expo seemed well suited
-              for the job.
+              practice particularly when performance is an absolute requirement.
+              In this first iteration of the application, Expo seemed well
+              suited for the job.
             </Typography>
             <Typography size={fontSizes['--paragraph']}>
-              MongoDb is easy to get set up with hosting and its intuitive query
-              language. Additionally modelling of data based changed upon
-              discussions which made technical changes easy to make. knowledge
-              and so made it easy to change the schema when necessary. Also the
-              aggregate shape of the data meant that MongoDb was well suited.
+              MongoDB is easy to get set up with hosting and its intuitive query
+              language. Additionally modelling of data after discussions made
+              technical changes easy to make. knowledge and so made it easy to
+              change the schema when necessary. Also, the aggregate shape of the
+              data meant that MongoDB was well-suited.
             </Typography>
             <Typography size={fontSizes['--paragraph']}>
               The API has 3 main end-points to the backend for reading, adding
@@ -175,12 +176,12 @@ const IolAssist = () => {
               the scale of the application currently.{' '}
             </Typography>
             <Typography size={fontSizes['--paragraph']}>
-              The backend was hosted on railway.app due to ease getting set up
-              and its integration with Github meant that on push it would
-              trigger a new deployment which suited development. The frontend
+              The backend was hosted on railway.app due to ease of getting set
+              up and its integration with Github meant that on push it would
+              trigger a new deployment which suited development. The front-end
               deployment is currently pending. Whilst submitting to the Apple
               App Store is a known process, there are data and legal
-              implications that need addressed prior to launching.
+              implications that need to be addressed prior to launching.
             </Typography>
           </section>
           <section>
@@ -196,38 +197,40 @@ const IolAssist = () => {
               many iterations to get to something of value.
             </Typography>
             <Typography size={fontSizes['--paragraph']}>
-              The implementation of an idea is complex, however the what of a
+              The implementation of an idea is complex, however, the what of a
               product is the most important aspect to understand. This can be
               done before any code is written.
             </Typography>
             <Typography size={fontSizes['--paragraph']}>
               The project was designed from scratch and allowed me to get to
-              grips with Figma and to understand some core design principles.
-              The design of an idea allows you to execute much more efficiently.
-              Once design has been agreed the implementation becomes a lot
+              grips with Figma and understand some core design principles. The
+              design of an idea allows you to execute much more efficiently.
+              Once the design has been agreed the implementation becomes a lot
               easier.
             </Typography>
             <Typography modifiers="heading3" size={fontSizes['--header3']}>
               What I would done differently
             </Typography>
             <Typography size={fontSizes['--paragraph']}>
-              Its better to create a minimal slice and get feedback and iterate
-              than to try and build large chunks.
+              It is better to create a minimal slice and get feedback and
+              iterate than to try and build large chunks.
             </Typography>
 
             <Typography modifiers="heading3" size={fontSizes['--header3']}>
               What I would do in the future
             </Typography>
             <Typography size={fontSizes['--paragraph']}>
-              In hindsight, I spend weeks of reading and planning which couldve
-              been better spent in the creating. Whilst some of it was useful to
-              have ahead of time, the analyse paralysis impeded progress.
+              In hindsight, I spend weeks of reading and planning which could
+              {"'"}ve been better spent on creating. Whilst some of it was
+              useful to have ahead of time, the analyse paralysis impeded
+              progress.
             </Typography>
             <Typography size={fontSizes['--paragraph']}>
-              In the future it would be better to create user stories to focus
-              the minimum requirements necessary. Whilst the technical
-              challenges were in part learning opportunities, it wouldve been
-              much better to have got design prototype feedback prior to coding.
+              In the future, it would be better to create user stories to focus
+              on the minimum requirements necessary. Whilst the technical
+              challenges were in part learning opportunities, it would{"'"}ve
+              been much better to have got design prototype feedback prior to
+              coding.
             </Typography>
           </section>
         </article>
