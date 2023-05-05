@@ -102,8 +102,8 @@ const IndexPage = (props: Props) => {
             modifiers="heading1"
             size={fontSizes['--header1']}
           >
-            Hello I’m Aaron, Edinburgh based Doctor passionate about products
-            and impact.
+            Hello I’m Aaron, an Edinburgh based Doctor passionate about creating
+            products and providing impact.
           </Typography>
           <Flex gap="16px" justifyContent="flex-start">
             <Button onClick={() => handleClick('about')}>About Me</Button>
@@ -193,7 +193,7 @@ const IndexPage = (props: Props) => {
         </section> */}
         <section>
           <Typography modifiers="heading1" size={fontSizes['--header1']}>
-            Core Ideas from Books
+            Book Reviews
           </Typography>
           <ul style={{ padding: '0px' }}>
             {sortedByYearPosts
