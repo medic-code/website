@@ -51,12 +51,12 @@ const Block = styled.div`
   margin-bottom: -16px;
   border-radius: 8px;
 
-  @media (hover: hover) {
-    &:hover {
-      background-color: hsl(var(--palette-blue-05));
-      color: hsl(var(--palette-blue-55));
-    }
-  }
+  // @media (hover: hover) {
+  //   &:hover {
+  //     background-color: hsl(var(--palette-blue-05));
+  //     color: hsl(var(--palette-blue-55));
+  //   }
+  // }
 `;
 
 const StyledAnchor = styled(Anchor)`
@@ -106,8 +106,8 @@ const IndexPage = (props: Props) => {
             products and providing impact.
           </Typography>
           <Flex gap="16px" justifyContent="flex-start">
-            <Button onClick={() => handleClick('about')}>About Me</Button>
-            <Button onClick={() => handleClick('projects')}>Projects</Button>
+            {/* <Button onClick={() => handleClick('about')}>About Me</Button>
+            <Button onClick={() => handleClick('projects')}>Projects</Button> */}
             <Break></Break>
             <StyledAnchor
               href="https://stackoverflow.com/users/12566046/aarons?tab=profile"

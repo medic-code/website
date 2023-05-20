@@ -11,7 +11,6 @@ const StyledButton = styled.button<StyleProp>`
   margin: ${(props) => (props.margin ? props.margin : '0px')})};
   width: max-content;
   border-radius: ${spaces['--space-8']};
-  background-color: hsl(var(--palette-green-15));
   padding: 11px 16px;
   color: #139398;
   transition: background-color 0.2s linear, color 0.2s linear,
@@ -26,11 +25,6 @@ const StyledButton = styled.button<StyleProp>`
   &:disabled {
     cursor: not-allowed;
     background: none;
-  }
-
-  &:hover {
-    box-shadow: 0 2px 40px -4px hsl(var(--palette-green-25));
-    background-color: hsl(var(--palette-green-15));
   }
 
   $:focus {
