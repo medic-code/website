@@ -57,7 +57,7 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
         additionalMetaTags={[
           {
-            property: 'google-site-verification',
+            name: 'google-site-verification',
             content: 'RuCNrntZGHodQN8JdUDZhCydqJ-paSyP8S4cW_Tq6eo',
           },
         ]}
