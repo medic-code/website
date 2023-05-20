@@ -8,6 +8,7 @@ const StyledButton = styled.button<StyleProp>`
   font-size: ${(props) => (props.size ? props.size : fontSizes['--paragraph'])};
   font-weight: ${(props) =>
     props.fontWeight ? props.fontWeight : fontWeights['--bold']};
+  margin: ${(props) => (props.margin ? props.margin : '0px')})};
   width: max-content;
   border-radius: ${spaces['--space-8']};
   background-color: hsl(var(--palette-green-15));
