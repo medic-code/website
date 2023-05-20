@@ -51,12 +51,12 @@ const Block = styled.div`
   margin-bottom: -16px;
   border-radius: 8px;
 
-  // @media (hover: hover) {
-  //   &:hover {
-  //     background-color: hsl(var(--palette-blue-05));
-  //     color: hsl(var(--palette-blue-55));
-  //   }
-  // }
+  @media (hover: hover) {
+    &:hover {
+      background-color: hsl(var(--palette-blue-05));
+      color: hsl(var(--palette-blue-55));
+    }
+  }
 `;
 
 const StyledAnchor = styled(Anchor)`
