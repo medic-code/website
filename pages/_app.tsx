@@ -55,6 +55,12 @@ export default function App({ Component, pageProps }: AppProps) {
           site: '@aaronsmithdev',
           cardType: 'summary_large_image',
         }}
+        additionalMetaTags={[
+          {
+            property: 'google-site-verification',
+            content: 'RuCNrntZGHodQN8JdUDZhCydqJ-paSyP8S4cW_Tq6eo',
+          },
+        ]}
       />
       <Component {...pageProps} />
     </>
