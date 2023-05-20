@@ -1,0 +1,94 @@
+---
+title: 'Linear Regression in 5 minutes'
+date: '2023-05-20'
+slug: 'linearRegression5mins'
+lastUpdated: '2023-05-20'
+type: 'blog'
+---
+
+In this short article, we will cover the basics of linear regression in plain English without mathematical equations. The aim is to have some intuition about linear regression as a crucial building block of machine learning.
+
+## What is Linear regression?
+
+Linear regression is a statistical method that models relationships between input and output data using a line of best fit. Using this line of best fit, we can predict the output from new data.
+
+For example, say we have data on the number of hours studying for an exam and the eventual exam score for students. We can find a relationship between this by plotting the study hours against the exam score. In this case, our input is the number of hours studied, and the output we want to know about is the exam score.
+
+Linear regression is a fundamental algorithm in machine learning. Specifically, it is a supervised learning algorithm and uses training data to learn the best way to model the data.
+
+In machine learning, linear regression can identify the essential inputs for a given output. It also serves as a baseline model to compare against more complex models. Additionally, we evaluate machine learning models using the same techniques for linear regression. Understanding linear regression is fundamental to understanding machine learning.
+
+## Definitions
+
+Now that we know what linear regression is let's break the phrase linear regression down. The regression part refers to a class of algorithms that make continuous numeric value predictions based on input data. The commonest regression algorithm is linear regression.
+
+The linear aspect refers to the fact that we assume the data we use is linear and can make a prediction based on that relationship. But what does it mean to say a relationship is linear?
+
+For our example data to have a linear relationship, the exam score increases as the number of hours increases. If that is the case generally, then we have a linear relationship. Another way to say it is that we call this linear data when there is a constant rate of change between input (in this case, the number of hours studied) and output (exam score).
+
+## How does linear regression work?
+
+In linear regression, we assume the data is linear. With that assumption, we can create a **model** represented by a straight line to best fit the data to make predictions.
+
+The key to the linear regression model is being able to find the best linear equation for the dataset we have. Once we have an equation that best describes the dataset, we can use that equation to predict the outcome of unseen data.
+
+For example, say in the number of hours studied and exam grades example; we could have someone who puts in 500 hours of study time. We have yet to see a person put that much effort into studying. Still, with linear regression, we can predict the exam score for this person.
+
+Now, indeed studying hours are not the only factor in exam scores. Yes, that's true; the model is simplistic, but to explain the concepts, let's work with it.
+
+Linear regression in the real world is often more complicated than the example above about studying and exam scores. In the case of one input (study hours) and one output(exam score), we call this **simple linear regression**. The term we use to describe a linear regression model with multiple inputs to output is **multiple linear regression**.
+
+To illustrate the linear regression model differently, say we put some dots on a page that looks like a line. Think of the points as magnets. We place a rod near the dots; in this case, the rod will be pulled until there's equilibrium such that it's closest to all points. In this circumstance, the rod is drawn to a balance is how we can best make predictions for that data.
+
+## Least Squares Method
+
+Now you might be thinking, how do we create a model that best makes predictions for our linear data?
+
+We could put a line through our data and compare the model's predicted output against our actual data. The line isn't the best equation if the two values are entirely different. If they're close, we see the model fits the data well.
+
+We can find the differences between each predicted outcome and the actual outcome for all of our datasets; we call this the **residual**. To get the best-fit equation for our model, we can add all these residuals and then say we want that total to be as small as possible. When that happens, we have the equation for our model. We call this the **least squares method**.
+
+The linear regression model is so simple that we don't need to use any fancy machine-learning algorithms to find this equation for our model. Using some algebra, we can calculate a data set's different parts of the linear equation. When we can put some values into mathematical formulas to get the best linear equation for our data, we call this a **closed-form solution** for our dataset.
+
+There are other ways to find the correct linear equation to fit the data. In the next section below, we will discuss a more general way to find the best fit linear equation used to model linear data called **gradient descent**. Gradient descent is used a lot in machine learning, and the simplicity of linear regression makes it easier to understand.
+
+Using machine learning to find the best straight line is unnecessary. Still, we can use linear regression as a foundation to understand one of the fundamental concepts in machine learning.
+
+## Gradient Descent
+
+The gradient descent algorithm is a way to minimise the difference between our data and our predicted values from our data by using mathematics to guide us to the best solution iteratively. To say it another way, we want to learn the best linear equation that fits our data.
+
+First, we start with a random guess as to the equation we're using for our model. The gradient descent algorithm looks at how good that equation is using mathematics. It then makes a slight change to that equation and tests whether it would make the equation a better fit for our data. By better, we mean the equation changes so we get closer to minimising the error between our predicted and actual outcomes for the whole dataset.
+
+The gradient part of the term refers to the ability to detect how quickly something changes. By detecting change, we can know when the difference between two things is minimal. In our case, we want to know the most negligible difference between predicted and actual data.
+
+We mentioned above in the previous section about minimising the error between a predicted and actual outcome. That is when we know we have a good model. Gradient descent will tell us when we are getting closer to minimising this error for all our data. The equation that starts as a guess gets updated a little bit at a time, and using the revised equation, we can test to see if we're getting closer to our goal.
+
+We update this equation over and over until we have an equation such that the difference between predicted outcomes using that equation and actual outcomes are the minimum. When we have that, we have the line of best fit for our dataset.
+
+## Assumptions
+
+Like any method, we must always look at the assumptions under which we use the model. Knowing the premises means we can evaluate whether the model will be accurate.
+
+First linear regression assumes that the data is generally linear. There is a linear relationship between the input data and the output. The model's accuracy will be affected if the data is not linear.
+
+The input data must be independent of each other when there are multiple inputs to an output. Having input data influenced by each (or correlated) other leads to poor accuracy in the model.
+
+Lastly, linear regression assumes no outliers in the data. Having outliers in the data can heavily affect the model's accuracy.
+
+It's okay to use linear regression when the data does not fulfil all the assumptions, but knowing what they are will help you decide if linear regression is going to model that is useful. Additionally, there are ways to change the data to suit these assumptions, for example, by removing outliers.
+
+## Linear regression in context
+
+The power of linear regression is that it is easy to compute and works well with large datasets. Unlike other models, it's also straightforward to see how the model made its predictions.
+
+However, the problem with linear regression is that the data must have a linear relationship to be helpful. Additionally, suppose the data or some inputs to the model are too linear (or correlated, as we say). In that case, it can make the model unreliable. It's also sensitive to outliers; our model will change more than we would like to accommodate if there are outliers.
+
+## Summary
+
+1. Linear regression is a method to model the relationship between input and output data using a line of best fit between the data.
+2. Linear regression is a supervised machine learning algorithm used to compare against other machine learning models and provide insights into what inputs are most useful to the model.
+3. We can create the model using the least squares method or the gradient descent algorithm.
+4. Using linear regression, we assume that the data has a linear relationship, there are not many outliers and that the input data is independent.
+5. Linear regression is easy to compute and shows high predictability
+6. Linear regression is sensitive to outliers and only works for linear data. When the data is heavily correlated, the model accuracy is reduced.
