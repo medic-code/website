@@ -3,6 +3,7 @@ import Script from 'next/script';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import * as gtag from '../lib/gtag';
+import { NextSeo } from 'next-seo';
 
 import GlobalStyles from '../design_system/lib/index';
 
@@ -44,6 +45,17 @@ export default function App({ Component, pageProps }: AppProps) {
       )}
 
       <GlobalStyles />
+      <NextSeo
+        title="Aaron Smith Blog"
+        defaultTitle="Aaron Smith Blog"
+        description="A full stack developer and Doctor who is passionate creating products"
+        canonical="https://www.aaron-smith.dev"
+        twitter={{
+          handle: '@aaronsmithdev',
+          site: '@aaronsmithdev',
+          cardType: 'summary_large_image',
+        }}
+      />
       <Component {...pageProps} />
     </>
   );

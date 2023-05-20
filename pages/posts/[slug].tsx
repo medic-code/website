@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { MDXRemote } from 'next-mdx-remote';
 import { GetStaticProps, GetStaticPaths } from 'next';
+import { NextSeo } from 'next-seo';
 
 import { getFiles, getFileBySlug } from '@/lib/mdx';
 import MDXComponents from '@/core/components/MDX/MDXComponents';
@@ -18,6 +19,7 @@ const Blog = (props: getFilePost) => {
   return (
     <div>
       <BlogLayout frontMatter={post.frontMatter}>
+        <NextSeo title={post.frontMatter.title} />
         <MDXRemote {...post.mdxSource} components={{ ...MDXComponents }} />
       </BlogLayout>
     </div>

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Image from 'next/image';
+import { NextSeo } from 'next-seo';
 
 import {
   LogoIcon,
@@ -22,6 +23,7 @@ const IconPadding = styled.div`
 const IolAssist = () => {
   return (
     <Layout footer>
+      <NextSeo title="IOL Assist" />
       <Grid column="1fr minmax(auto,70ch) 1fr" gap="0px 16px">
         <IconPadding>
           <Flex flexDirection="column" alignItems="flex-start" gap="32px">
