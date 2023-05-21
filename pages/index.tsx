@@ -43,7 +43,7 @@ const Block = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 32px;
-  color: hsl(var(--palette-gray-65));
+  color: hsl(var(--palette-blue-45));
   background-color: transparent;
   margin-left: -16px;
   padding-left: 16px;
@@ -80,7 +80,6 @@ const handleClick = (sectionId: string) => {
 
 const IndexPage = (props: Props) => {
   const { posts } = props;
-
   const sortedByYearPosts = posts.sort((post1, post2) =>
     getYearFromDate(post1.date) > getYearFromDate(post2.date) ? -1 : 1
   );
@@ -132,6 +131,27 @@ const IndexPage = (props: Props) => {
         </section>
         <About />
         <section>
+          <Heading1>Technical Articles</Heading1>
+          <ul style={{ padding: '0px' }}>
+            {sortedByYearPosts
+              .filter((post) => post.type === 'technicalBlog')
+              .map((post) => {
+                return (
+                  <li
+                    key={post.slug}
+                    style={{
+                      padding: '0px',
+                      marginBottom: '1rem',
+                      listStyle: 'none',
+                    }}
+                  >
+                    <Anchor href={`/posts/${post.slug}`}>
+                      <Block>{post.title}</Block>
+                    </Anchor>
+                  </li>
+                );
+              })}
+          </ul>
           <Heading1>Book Reviews</Heading1>
           <ul style={{ padding: '0px' }}>
             {sortedByYearPosts
