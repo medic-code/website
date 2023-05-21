@@ -6,6 +6,10 @@ import {
   fontSizes,
   List,
   Pill,
+  Heading1,
+  Heading2,
+  Heading3,
+  Heading4,
 } from '@/design_system/index';
 import MDXImage from './Image';
 import { ListTypes } from '@/design_system/List/types';
@@ -23,42 +27,10 @@ const MDXComponents = {
       />
     );
   },
-  h1: function H1(props: React.HTMLAttributes<HTMLHeadingElement>) {
-    return (
-      <Typography
-        {...props}
-        modifiers="heading1"
-        size={fontSizes['--header1']}
-      />
-    );
-  },
-  h2: function H2(props: React.HTMLAttributes<HTMLHeadingElement>) {
-    return (
-      <Typography
-        {...props}
-        modifiers="heading2"
-        size={fontSizes['--header2']}
-      />
-    );
-  },
-  h3: function H3(props: React.HTMLAttributes<HTMLHeadingElement>) {
-    return (
-      <Typography
-        {...props}
-        modifiers="heading3"
-        size={fontSizes['--header3']}
-      />
-    );
-  },
-  h4: function H4(props: React.HTMLAttributes<HTMLHeadingElement>) {
-    return (
-      <Typography
-        {...props}
-        modifiers="heading4"
-        size={fontSizes['--header4']}
-      />
-    );
-  },
+  h1: Heading1,
+  h2: Heading2,
+  h3: Heading3,
+  h4: Heading4,
   Button,
   Image: MDXImage,
   ol: function OL(props: ListTypes) {

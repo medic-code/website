@@ -6,6 +6,7 @@ import {
   Flex,
   BackArrow,
   Pill,
+  Heading1,
 } from '../../../design_system/index';
 
 import styled from 'styled-components';
@@ -40,14 +41,7 @@ export const Hero = ({ title, date, lastUpdated }: HeroProps) => {
         </Anchor>
       </Flex>
       <IconPadding>
-        <Typography
-          margin="0px 0px 0px 0px"
-          color="hsl(var(--palette-gray-65))"
-          modifiers="heading1"
-          size={fontSizes['--header1']}
-        >
-          {title}
-        </Typography>
+        <Heading1> {title}</Heading1>
       </IconPadding>
       <Flex flexDirection="column" alignItems="baseline">
         <Typography
