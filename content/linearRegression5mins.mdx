@@ -153,14 +153,6 @@ something changes. By detecting change, we can know when the difference between
 two things is minimal. In our case, we want to know the most negligible
 difference between predicted and actual data.
 
-<Image
-  src="/Images/LinearReg/4.svg"
-  alt="First guess at linear equation"
-  layout="responsive"
-  width={200}
-  height={200}
-/>
-
 We mentioned above in the previous section about minimising the error between a
 predicted and actual outcome. That is when we know we have a good model.
 Gradient descent will tell us when we are getting closer to minimising this
@@ -169,8 +161,8 @@ little bit at a time, and using the revised equation, we can test to see if
 we're getting closer to our goal.
 
 <Image
-  src="/Images/LinearReg/5.svg"
-  alt="Second guess at linear equation"
+  src="/Images/LinearReg/4.svg"
+  alt="First guess at linear equation"
   layout="responsive"
   width={200}
   height={200}
@@ -180,6 +172,14 @@ We update this equation over and over until we have an equation such that the
 difference between predicted outcomes using that equation and actual outcomes
 are the minimum. When we have that, we have the line of best fit for our
 dataset.
+
+<Image
+  src="/Images/LinearReg/5.svg"
+  alt="Second guess at linear equation"
+  layout="responsive"
+  width={200}
+  height={200}
+/>
 
 ## The assumptions of linear regression
 
