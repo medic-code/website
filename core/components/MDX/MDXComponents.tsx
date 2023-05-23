@@ -13,6 +13,7 @@ import {
 } from '@/design_system/index';
 import MDXImage from './Image';
 import { ListTypes } from '@/design_system/List/types';
+import Script from 'next/script';
 
 const MDXComponents = {
   a: function A(props: UnderlineAnchorProps) {

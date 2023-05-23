@@ -10,14 +10,14 @@ const StyledFigure = styled.figure`
 
 const ImageStyle = styled.div`
   margin: auto;
-  max-width: 70%;
-  height: auto;
+  max-width: 100%;
+  max-height: 90%;
 `;
 const MDXImage = (props: ImageProps) => {
   return (
     <>
       <ImageStyle>
-        <Image {...props} quality={70} alt={props.alt} />
+        <Image {...props} quality={100} alt={props.alt} />
         <StyledFigure>
           <Typography size={fontSizes['--paragraph']}>{props.alt}</Typography>
         </StyledFigure>
