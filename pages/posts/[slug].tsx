@@ -15,11 +15,11 @@ const Blog = (props: getFilePost) => {
   if (isFallback || !post) {
     return <div>Loading....</div>;
   }
-
+  const canonicallink = `http://www.aaron-smith.dev/posts/${post.frontMatter.slug}`;
   return (
     <div>
       <BlogLayout frontMatter={post.frontMatter}>
-        <NextSeo title={post.frontMatter.title} />
+        <NextSeo title={post.frontMatter.title} canonical={canonicallink} />
         <MDXRemote {...post.mdxSource} components={{ ...MDXComponents }} />
       </BlogLayout>
     </div>

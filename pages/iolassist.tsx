@@ -9,6 +9,9 @@ import {
   Flex,
   Anchor,
   BackArrow,
+  Heading1,
+  Heading2,
+  Heading3,
 } from '@/design_system';
 import Layout from '../core/Layout/index';
 import Grid from '../design_system/Grid/index';
@@ -23,7 +26,10 @@ const IconPadding = styled.div`
 const IolAssist = () => {
   return (
     <Layout footer>
-      <NextSeo title="IOL Assist" />
+      <NextSeo
+        title="IOL Assist"
+        canonical="http://www.aaron-smith.dev/iolassist"
+      />
       <Grid column="1fr minmax(auto,70ch) 1fr" gap="0px 16px">
         <IconPadding>
           <Flex flexDirection="column" alignItems="flex-start" gap="32px">
@@ -41,14 +47,7 @@ const IolAssist = () => {
               </Flex>
             </Anchor>
           </Flex>
-          <Typography
-            margin="16px 0px 0px 0px"
-            fontWeight="var(--bold)"
-            size={fontSizes['--header1']}
-            color="hsl(var(--palette-green-75))"
-          >
-            IOL Assist
-          </Typography>
+          <Heading1>IOL Assist</Heading1>
         </IconPadding>
 
         <article>
@@ -81,14 +80,7 @@ const IolAssist = () => {
             </Flex>
           </section>
           <section>
-            <Typography
-              margin="16px 0px 0px 0px"
-              fontWeight="var(--semibold)"
-              size={fontSizes['--header1']}
-              color="hsl(var(--palette-green-75))"
-            >
-              Background
-            </Typography>
+            <Heading2>Background</Heading2>
             <Typography size={fontSizes['--paragraph']}>
               Cataract has consistently been the main contributor to blindness
               in adults over 50-years-old. Of the 33.6 million cases of
@@ -145,9 +137,7 @@ const IolAssist = () => {
             </Typography>
           </section>
           <section>
-            <Typography modifiers="heading1" size={fontSizes['--header1']}>
-              Technical Information
-            </Typography>
+            <Heading2>Technical Information</Heading2>
             <Typography size={fontSizes['--paragraph']}>
               The application uses React Native and Expo on the front end and
               Express and MongoDB on the back end. React Native and Expo were
@@ -194,12 +184,8 @@ const IolAssist = () => {
             </Typography>
           </section>
           <section>
-            <Typography modifiers="heading1" size={fontSizes['--header1']}>
-              Personal Growth
-            </Typography>
-            <Typography modifiers="heading3" size={fontSizes['--header3']}>
-              What I learned
-            </Typography>
+            <Heading2>Personal Growth</Heading2>
+            <Heading3>What I learned</Heading3>
             <Typography size={fontSizes['--paragraph']}>
               This project was the first time thinking of programming in terms
               of a product. It taught me how complicated creating a product
@@ -223,9 +209,7 @@ const IolAssist = () => {
               progress.
             </Typography>
 
-            <Typography modifiers="heading3" size={fontSizes['--header3']}>
-              What I would do in the future
-            </Typography>
+            <Heading3>What would I do in the future</Heading3>
             <Typography size={fontSizes['--paragraph']}></Typography>
             <Typography size={fontSizes['--paragraph']}>
               In the future, creating user stories to focus on the minimum

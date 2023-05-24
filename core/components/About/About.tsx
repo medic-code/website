@@ -4,6 +4,7 @@ import {
   Grid,
   Box,
   Anchor,
+  Heading1,
 } from '../../../design_system/index';
 import { Section, StyledCV } from './styles';
 
@@ -12,14 +13,7 @@ const About = () => {
     <Section>
       <Grid column="1fr minmax(auto,70ch) 1fr" gap="16px">
         <Box>
-          <Typography
-            id="about"
-            modifiers="heading1"
-            size={fontSizes['--header1']}
-          >
-            About Me
-          </Typography>
-
+          <Heading1>About Me</Heading1>
           <Typography
             size={fontSizes['--paragraph']}
             color="hsl(var(--palette-gray-75))"

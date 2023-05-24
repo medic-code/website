@@ -21,8 +21,10 @@ import {
   LinkedInIcon,
   Anchor,
   GitHubIcon,
+  Heading1,
+  Heading2,
+  Heading3,
 } from '../design_system/index';
-import { useState, useEffect } from 'react';
 
 import styled from 'styled-components';
 import { getAllFilesFrontMatter } from '@/lib/mdx';
@@ -41,7 +43,7 @@ const Block = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 32px;
-  color: hsl(var(--palette-gray-65));
+  color: hsl(var(--palette-blue-45));
   background-color: transparent;
   margin-left: -16px;
   padding-left: 16px;
@@ -65,13 +67,6 @@ const StyledAnchor = styled(Anchor)`
     margin: 0;
   }
 `;
-
-const StyledDate = styled(Typography)`
-  margin: 0px;
-  font-size: var(--paragraph);
-  min-width: 60px;
-`;
-
 interface Props {
   posts: Post[];
 }
@@ -85,7 +80,6 @@ const handleClick = (sectionId: string) => {
 
 const IndexPage = (props: Props) => {
   const { posts } = props;
-
   const sortedByYearPosts = posts.sort((post1, post2) =>
     getYearFromDate(post1.date) > getYearFromDate(post2.date) ? -1 : 1
   );
@@ -97,14 +91,10 @@ const IndexPage = (props: Props) => {
       <Header />
       <Grid column="1fr minmax(auto, 70ch) 1fr" gap="48px 16px">
         <section>
-          <Typography
-            className="testComponentClass"
-            modifiers="heading1"
-            size={fontSizes['--header1']}
-          >
+          <Heading1>
             Hello I’m Aaron, an Edinburgh based Doctor passionate about creating
             products and providing impact.
-          </Typography>
+          </Heading1>
           <Flex gap="16px" justifyContent="flex-start">
             {/* <Button onClick={() => handleClick('about')}>About Me</Button>
             <Button onClick={() => handleClick('projects')}>Projects</Button> */}
@@ -140,61 +130,29 @@ const IndexPage = (props: Props) => {
           </Flex>
         </section>
         <About />
-        {/* <section>
-          <Typography modifiers="heading1" size={fontSizes['--header1']}>
-            All Articles
-          </Typography>
-          <ul style={{ padding: 0 }}>
+        <section>
+          <Heading1>Technical Articles</Heading1>
+          <ul style={{ padding: '0px' }}>
             {sortedByYearPosts
-              .filter((post) => post.type === 'article')
+              .filter((post) => post.type === 'technicalBlog')
               .map((post) => {
-                const currentYear = new Date(post.date).getFullYear();
-                let printYear;
-                if (currentYear !== year) {
-                  printYear = true;
-                  year = currentYear;
-                } else {
-                  printYear = false;
-                }
                 return (
                   <li
                     key={post.slug}
                     style={{
-                      listStyle: 'none',
-                      padding: 0,
+                      padding: '0px',
                       marginBottom: '1rem',
+                      listStyle: 'none',
                     }}
                   >
-                    {printYear ? (
-                      <Typography
-                        modifiers="header3"
-                        size={fontSizes['--header3']}
-                        margin="32px 0px"
-                        fontWeight="var(--semibold)"
-                      >
-                        {currentYear}
-                      </Typography>
-                    ) : null}
-
                     <Anchor href={`/posts/${post.slug}`}>
-                      <Block>
-                        <StyledDate>
-                          {dateToMonthYear(
-                            new Date(Date.parse(`${post.date}`)).toString()
-                          )}
-                        </StyledDate>
-                        {post.title}
-                      </Block>
+                      <Block>{post.title}</Block>
                     </Anchor>
                   </li>
                 );
               })}
           </ul>
-        </section> */}
-        <section>
-          <Typography modifiers="heading1" size={fontSizes['--header1']}>
-            Book Reviews
-          </Typography>
+          <Heading1>Book Reviews</Heading1>
           <ul style={{ padding: '0px' }}>
             {sortedByYearPosts
               .filter((post) => post.type === 'blog')
@@ -217,22 +175,9 @@ const IndexPage = (props: Props) => {
           </ul>
         </section>
         <section>
-          <Typography
-            id="projects"
-            modifiers="heading1"
-            size={fontSizes['--header1']}
-          >
-            Projects
-          </Typography>
+          <Heading1>Projects</Heading1>
           <Anchor href="/iolassist">
-            <Typography
-              modifiers="modifiedHeading2"
-              size={fontSizes['--header2']}
-              className="navtest"
-              color="hsl(var(--palette-green-75))"
-            >
-              IOL Assist
-            </Typography>
+            <Heading2>IOL Assist</Heading2>
             <Typography size={fontSizes['--paragraph']}>
               A mobile app to support cataract surgeons with intra-ocular lens
               choices
@@ -262,9 +207,7 @@ const IndexPage = (props: Props) => {
           </Anchor>
         </section>
         <section>
-          <Typography modifiers="heading1" size={fontSizes['--header1']}>
-            Contact Me
-          </Typography>
+          <Heading1>Contact Me</Heading1>
           <Typography modifiers="paragraph" size={fontSizes['--paragraph']}>
             Want to get in touch ?
           </Typography>

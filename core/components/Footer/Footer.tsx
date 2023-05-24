@@ -8,6 +8,8 @@ import {
   Typography,
   Flex,
   fontSizes,
+  Heading1,
+  Heading3,
 } from '../../../design_system/index';
 
 import {
@@ -25,28 +27,16 @@ const Footer = () => {
       <FooterLine />
       <Grid column="1fr minmax(auto,70ch) 1fr" gap="16px">
         <FooterContent>
-          <Typography
-            modifiers="heading1"
-            size={fontSizes['--header1']}
-            color="hsl(187 15% 87%)"
-          >
-            Aaron Smith
-          </Typography>
+          <Heading1 margin="0.5rem 0 0.5rem 0">Aaron Smith</Heading1>
           <Flex flexDirection="column" alignItems="flex-start">
             <Anchor href="/">
-              <Typography modifiers="heading3" size={fontSizes['--header3']}>
-                Home
-              </Typography>
+              <Heading3 margin="0.5rem 0 0.5rem 0">Home</Heading3>
             </Anchor>
             <Anchor modifiers="underline" href={BASE_URL + '/#about'}>
-              <Typography modifiers="heading3" size={fontSizes['--header3']}>
-                About
-              </Typography>
+              <Heading3 margin="0.5rem 0 0.5rem 0">About</Heading3>
             </Anchor>
             <Anchor href={BASE_URL + '/#projects'}>
-              <Typography modifiers="heading3" size={fontSizes['--header3']}>
-                Projects
-              </Typography>
+              <Heading3 margin="0.5rem 0 0.5rem 0">Projects</Heading3>
             </Anchor>
           </Flex>
         </FooterContent>
