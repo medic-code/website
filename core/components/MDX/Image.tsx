@@ -3,15 +3,15 @@ import styled from 'styled-components';
 import { Typography, fontSizes } from '@/design_system';
 
 const StyledFigure = styled.figure`
-  margin-bottom: 1rem;
+  margin: 0;
   display: flex;
   justify-content: center;
+  font-style: italic;
 `;
 
 const ImageStyle = styled.div`
   margin: auto;
-  max-width: 100%;
-  max-height: 90%;
+  width: 85%;
 `;
 const MDXImage = (props: ImageProps) => {
   return (
@@ -19,7 +19,9 @@ const MDXImage = (props: ImageProps) => {
       <ImageStyle>
         <Image {...props} quality={100} alt={props.alt} />
         <StyledFigure>
-          <Typography size={fontSizes['--paragraph']}>{props.alt}</Typography>
+          <Typography margin="1rem 0 1rem 0" size={fontSizes['--paragraph']}>
+            {props.alt}
+          </Typography>
         </StyledFigure>
       </ImageStyle>
     </>
